@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthPage } from "./components/authpage";
@@ -11,6 +12,7 @@ import { RegisterComponent } from "./components/register.component";
         FontAwesomeModule,
         FormsModule,
         RouterModule,
+        BrowserModule
     ],
     declarations: [
         AuthPage,

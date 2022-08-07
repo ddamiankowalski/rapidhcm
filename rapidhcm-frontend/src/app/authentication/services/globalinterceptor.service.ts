@@ -13,11 +13,10 @@ export class GlobalInterceptor implements HttpInterceptor {
                 Authorization: `Bearer ${this.auth.getToken()}`
             }
         })
-        console.log('elod');
         return next.handle(req).pipe(
             catchError((error: HttpErrorResponse) => {
                 if(error.status == 401) {
-                    console.log('unauthorized!!');
+                    console.log(error);
                 }
                 return throwError(() => new Error(error.message));
             })

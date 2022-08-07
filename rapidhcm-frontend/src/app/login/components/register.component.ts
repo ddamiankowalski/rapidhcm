@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare, faGooglePlusSquare, faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
 import { faEye } from "@fortawesome/free-regular-svg-icons";
@@ -8,7 +8,7 @@ import { faCheck, faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
     selector: 'register',
     templateUrl: '../templates/register.html'
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
     constructor() {}
 
     public faCheck: IconDefinition = faCheck;
@@ -18,8 +18,16 @@ export class RegisterComponent {
     public faGoogle: IconDefinition = faGooglePlusSquare;
     public faEye: IconDefinition = faEye;
 
+    ngOnInit(): void {
+        this.currentStep = 1;
+    }
+
     public password: any;
+    public passwordRepeat: any;
     public login: any;
+    public email: any;
+
+    public currentStep: number = 1;
 
     public logIn() {
 
@@ -29,7 +37,19 @@ export class RegisterComponent {
 
     }
 
+    public emailChange(event: any) {
+
+    }
+
     public pwChange(event: any) {
 
+    }
+
+    public pwRepeatChange(event: any) {
+
+    }
+
+    public nextStep() {
+        this.currentStep++;
     }
 }
