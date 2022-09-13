@@ -4,12 +4,12 @@ import * as bcrypt from 'bcrypt';
 export type User = {
     userId: number,
     username: string, 
-    password: string
+    password: string,
 }
 
 @Injectable()
 export class UsersService {
-    private users: User[];
+    private readonly users: User[];
 
     constructor() {
         this.users = [
