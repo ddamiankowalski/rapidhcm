@@ -1,7 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
+import { User } from 'src/database/entities/user.entity';
+import { Repository } from 'typeorm';
 
-export type User = {
+export type UserEntity = {
     userId: number,
     username: string, 
     password: string,
@@ -9,17 +11,12 @@ export type User = {
 
 @Injectable()
 export class UsersService {
-    private readonly users: User[];
+    private readonly users: UserEntity[];
 
-    constructor() {
-        this.users = [
-            {
-                userId: 1,
-                username: "Damian",
-                password: "t4jn3h4slo"
-            }
-        ]
-    }
+    constructor(
+        @Inject('USER_REPOSITORY')
+        private userRepository: Repository<User>
+    ) {}
 
     async findOne(username: string): Promise<User | undefined> {
         return this.users.find(user => user.username === username)
@@ -27,15 +24,9 @@ export class UsersService {
 
     async create(userData: any): Promise<any> {
         const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(userData.password, salt);
-        const userId = Date.now();
-
-        this.users.push({
-            userId: userId,
-            username: userData.username,
-            password: hashedPassword
-        })
-
-        return true;
+        //const hashedPassword = await bcrypt.hash(userData.password, salt);
+        const userId = 1;
+        const newUser = this.userRepository.create({ username: 'niewiem', userId: userId, password: 'niewiem1' })
+        return this.userRepository.save(newUser)
     }
 }

@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import { User } from '../entities/user.entity';
 
 export const databaseProviders = [
   {
@@ -9,11 +10,9 @@ export const databaseProviders = [
         host: 'localhost',
         port: 3306,
         username: 'root',
-        password: 'root',
-        database: 'rapid',
-        entities: [
-            __dirname + '/../**/*.entity{.ts,.js}',
-        ],
+        password: 't4jn3h4slo',
+        database: 'rapidhcm',
+        entities: [User],
         synchronize: true,
       });
 
