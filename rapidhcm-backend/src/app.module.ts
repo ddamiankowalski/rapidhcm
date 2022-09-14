@@ -5,6 +5,9 @@ import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entity/user.entity';
 import { UsersModule } from './users/users.module';
+import { APP_FILTER } from '@nestjs/core';
+import { QueryExceptionFilter } from './filters/query-exception.filter';
+import { AllExceptionFilter } from './filters/all-exception.filter';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
