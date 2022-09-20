@@ -1,0 +1,25 @@
+@use './var';
+@use '../../base/var' as global;
+
+@mixin card-base() {
+    background-color: global.$white-background;
+    box-shadow: global.$card-shadow;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+}
+
+.card {
+    @include card-base();
+
+    &__login {
+        padding: 1rem 2rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @include card-base();
+    }
+
+
+}

@@ -1,0 +1,15 @@
+// this classes present the margins that can be used
+
+.m {
+    &-top {
+        &-small {
+            margin-top: .3rem;
+        }
+        &-medium {
+            margin-top: .5rem;
+        }
+        &-large {
+            margin-top: 1rem;
+        }
+    }
+}
