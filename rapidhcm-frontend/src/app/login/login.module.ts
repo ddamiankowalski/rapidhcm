@@ -1,8 +1,14 @@
 import { NgModule } from "@angular/core";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginPage } from "./components/loginpage.component";
 
 @NgModule({
-    imports: [],
-    declarations: [],
+    imports: [
+        FontAwesomeModule
+    ],
+    declarations: [
+        LoginPage
+    ],
     exports: []
 })
 export class LoginModule {

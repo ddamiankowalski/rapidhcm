@@ -2,8 +2,11 @@
 
 .m {
     &-top {
+        &_x-small {
+            margin-top: .3rem;
+        }
         &_small {
-            margin-top: .6rem;
+            margin-top: .5rem;
         }
         &_medium {
             margin-top: .9rem;
@@ -13,6 +16,24 @@
         }
         &_x-large {
             margin-top: 1.5rem;
+        }
+    }
+
+    &-left {
+        &_x-small {
+            margin-left: .3rem;
+        }
+        &_small {
+            margin-left: .5rem;
+        }
+        &_medium {
+            margin-left: .9rem;
+        }
+        &_large {
+            margin-left: 1rem;
+        }
+        &_x-large {
+            margin-left: 1.5rem;
         }
     }
 }

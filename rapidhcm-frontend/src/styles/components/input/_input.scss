@@ -16,11 +16,56 @@
         left: .6rem;
         padding: 0 .2rem;
         background-color: white;
+        font-weight: 500;
+        color: global.$dark-background;
+    }
+
+    &__checkbox-label {
+        color: global.$dark-background;
+        font-size: .4rem;
         font-weight: 400;
+    }
+
+    &__icon {
+        font-size: .45rem;
+        display: none;
+        color: global.$white-background;
+    }
+
+    &__checkbox {
+        width: .5rem;
+        height: .5rem;
+        border-radius: 20%;
+        vertical-align: middle;
+        appearance: none;
+        -webkit-appearance: none;
+        border: 1px solid;
+        border-color: global.$dark-background;
+        
+        &:checked {
+            background-color: global.$action-blue;
+            box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.01), 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+            border: 0px;
+
+            ~ .std-input__icon {
+                position: absolute;
+                display: block;
+                top: 1px;
+                left: 1px;
+                pointer-events: none;
+            }
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.1rem rgba(55, 66, 250, 0.25);
+        }
     }
 
     &__w-label {
         position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         width: 100%;
     }
 
@@ -33,6 +78,10 @@
 
     &::placeholder {
         color: global.$light-grey;
+    }
+
+    &::placeholder:hover {
+        color: global.$dark-background;
     }
 }
 

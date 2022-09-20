@@ -7,6 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
 import { AuthenticationSharedModule } from './authentication/authenticationshared.module';
 import { GlobalInterceptor } from './authentication/services/globalinterceptor.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { GlobalInterceptor } from './authentication/services/globalinterceptor.s
     AppRoutingModule,
     HttpClientModule,
     LoginModule,
+    FontAwesomeModule,
     AuthenticationSharedModule.forRoot()
   ],
   providers: [
