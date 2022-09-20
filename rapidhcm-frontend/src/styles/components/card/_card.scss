@@ -4,16 +4,16 @@
 @mixin card-base() {
     background-color: global.$white-background;
     box-shadow: global.$card-shadow;
-    width: fit-content;
+    width: 15rem;
     height: fit-content;
-    border-radius: 5px;
+    border-radius: .3rem;
 }
 
 .card {
     @include card-base();
 
     &__login {
-        padding: 1rem 2rem;
+        padding: 2.3rem 2.5rem;
         position: absolute;
         left: 50%;
         top: 50%;

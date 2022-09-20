@@ -2,14 +2,17 @@
 
 .m {
     &-top {
-        &-small {
-            margin-top: .3rem;
+        &_small {
+            margin-top: .6rem;
         }
-        &-medium {
-            margin-top: .5rem;
+        &_medium {
+            margin-top: .9rem;
         }
-        &-large {
+        &_large {
             margin-top: 1rem;
+        }
+        &_x-large {
+            margin-top: 1.5rem;
         }
     }
 }
