@@ -14,13 +14,15 @@
                 placeholder="Your password">
             <label for="password" class="std-input__label">Password</label>
             <div class="std-input__help has_error">{{ 'The password or username is incorrect' }}</div>
+            <fa-icon [icon]="faCircleExclamation" class="std-input__icon-error"></fa-icon>
         </div>
-        <div class="std-input__w-label m-top_x-large">
+        <div class="std-input__w-label m-top_large">
             <input type="checkbox" id="remember" class="std-input__checkbox">
-            <label for="remember" class="std-input__checkbox-label m-left_x-small">
+            <label for="remember" class="std-input__checkbox-label m-left_small">
                 Remember me?</label>
-            <fa-icon [icon]="squareIcon" class="std-input__icon"></fa-icon>
+            <fa-icon [icon]="faCheck" class="std-input__icon"></fa-icon>
             <div class="std-input__help"></div>
         </div>
+        <button class="std-btn__full-width m-top_large">Login</button>
     </div>
 </div>

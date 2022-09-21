@@ -32,9 +32,17 @@
         color: global.$white-background;
     }
 
+    &__icon-error {
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+        font-size: .5rem;
+        color: global.$error;
+    }
+
     &__checkbox {
-        width: .5rem;
-        height: .5rem;
+        width: .6rem;
+        height: .6rem;
         border-radius: 20%;
         vertical-align: middle;
         appearance: none;
@@ -50,13 +58,17 @@
             ~ .std-input__icon {
                 position: absolute;
                 display: block;
-                left: 1px;
+                left: .09rem;
                 pointer-events: none;
             }
         }
 
         &:focus {
             box-shadow: 0 0 0 0.1rem rgba(55, 66, 250, 0.25);
+        }
+
+        &:hover {
+            cursor: pointer;
         }
     }
 
