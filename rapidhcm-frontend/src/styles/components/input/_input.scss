@@ -68,11 +68,30 @@
         width: 100%;
     }
 
+    &__help {
+        position: absolute;
+        font-size: .4rem;
+        top: 2rem;
+        left: .6rem;
+        font-weight: 400;
+
+        &.has_error {
+            color: global.$error;
+        }
+    }
+
+    &.has_error {
+        border-color: global.$error;
+    }
+
     &:focus {
         outline: none;
         border-width: .5px;
         border-style: solid;
-        border-color: global.$matted-blue;
+
+        &:not(.has_error) {
+            border-color: global.$matted-blue
+        }
 
         &::placeholder {
             color: global.$deep-grey;
