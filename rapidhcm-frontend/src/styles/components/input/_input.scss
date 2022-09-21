@@ -50,8 +50,7 @@
             ~ .std-input__icon {
                 position: absolute;
                 display: block;
-                top: 1px;
-                left: 1px;
+                translate: (50%, 50%);
                 pointer-events: none;
             }
         }
@@ -73,15 +72,22 @@
         outline: none;
         border-width: .5px;
         border-style: solid;
-        border-color: global.$action-blue;
+        border-color: global.$matted-blue;
+
+        &::placeholder {
+            color: global.$deep-grey;
+        }
     }
 
     &::placeholder {
+        transition: all .5s ease;
         color: global.$light-grey;
     }
 
-    &::placeholder:hover {
-        color: global.$dark-background;
+    &:hover {
+        &::placeholder {
+            color: global.$deep-grey;
+        }
     }
 }
 
