@@ -1,6 +1,7 @@
 @use '../../base/var' as global;
 
 .std-input {
+    border-color: global.$dark-background;
     width: inherit;
     border-radius: .3rem;
     border-style: solid;
@@ -118,6 +119,15 @@
     &:hover {
         &::placeholder {
             color: global.$deep-grey;
+        }
+    }
+
+    &.password_field:not(:placeholder-shown) {
+        letter-spacing: .125em;
+        font: small-caption;
+        
+        @-moz-document url-prefix() {
+            font-size: .4rem;
         }
     }
 }
