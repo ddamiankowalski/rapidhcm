@@ -1,6 +1,7 @@
 @use '../../base/var' as global;
 
 .std-input {
+    transition: box-shadow .1s ease;
     border-color: global.$dark-background;
     width: inherit;
     border-radius: .3rem;
@@ -31,6 +32,7 @@
         font-size: .43rem;
         display: none;
         color: global.$white-background;
+        top: .05rem
     }
 
     &__icon-error {
@@ -87,23 +89,30 @@
         top: 2rem;
         left: .6rem;
         font-weight: 400;
+        display: none;
 
         &.has_error {
+            display: revert;
             color: global.$error;
         }
     }
 
     &.has_error {
         border-color: global.$error;
+        
+        &:focus {
+            box-shadow: 0 0 0 0.1rem rgba(255, 71, 87, .25);
+        }
     }
 
     &:focus {
         outline: none;
         border-width: .5px;
         border-style: solid;
+        box-shadow: 0 0 0 0.1rem rgba(55, 66, 250, 0.25);
 
         &:not(.has_error) {
-            border-color: global.$matted-blue
+            border-color: global.$matted-blue;
         }
 
         &::placeholder {

@@ -23,6 +23,12 @@
     }
 
     &-left {
+        &_xxx-small {
+            margin-left: .1rem;
+        }
+        &_xx-small {
+            margin-left: .2rem;
+        }
         &_x-small {
             margin-left: .3rem;
         }
