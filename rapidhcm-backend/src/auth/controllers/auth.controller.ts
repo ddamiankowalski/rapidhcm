@@ -1,6 +1,5 @@
-import { Controller, Post, UseGuards, Request, Catch, UseFilters } from "@nestjs/common";
+import { Controller, Post, UseGuards, Request, UseFilters } from "@nestjs/common";
 import { QueryExceptionFilter } from "src/filters/query-exception.filter";
-import { EntityNotFoundError, QueryFailedError } from "typeorm";
 import { AuthService } from "../auth.service";
 import { LocalAuthGuard } from "../local-auth.guard";
 
