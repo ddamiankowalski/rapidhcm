@@ -1,20 +1,24 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { LoginPage } from "./components/loginpage.component";
+import { AuthPage } from "./components/authpage";
+import { LoginComponent } from "./components/login.component";
+import { RegisterComponent } from "./components/register.component";
 
 @NgModule({
     imports: [
         FontAwesomeModule,
-        FormsModule
+        FormsModule,
+        RouterModule,
     ],
     declarations: [
-        LoginPage
+        AuthPage,
+        RegisterComponent,
+        LoginComponent
     ],
     exports: []
 })
-export class LoginModule {
+export class AuthModule {
     constructor() {}
 }

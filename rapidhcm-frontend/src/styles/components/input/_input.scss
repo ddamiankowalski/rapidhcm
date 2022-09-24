@@ -2,7 +2,7 @@
 
 .std-input {
     transition: box-shadow .1s ease;
-    border-color: global.$dark-background;
+    border-color: global.$deep-grey;
     width: inherit;
     border-radius: .3rem;
     border-style: solid;
@@ -23,6 +23,7 @@
     }
 
     &__checkbox-label {
+        border-color: global.$deep-grey;
         color: global.$dark-background;
         font-size: .4rem;
         font-weight: 400;

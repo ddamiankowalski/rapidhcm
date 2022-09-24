@@ -1,4 +1,3 @@
-import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare, faGooglePlusSquare, faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
@@ -6,11 +5,11 @@ import { faEye } from "@fortawesome/free-regular-svg-icons";
 import { faCheck, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
-    selector: 'login-page',
-    templateUrl: '../templates/loginpage.html'
+    selector: 'register',
+    templateUrl: '../templates/register.html'
 })
-export class LoginPage {
-    constructor(public http: HttpClient) {}
+export class RegisterComponent {
+    constructor() {}
 
     public faCheck: IconDefinition = faCheck;
     public faCircleExclamation: IconDefinition = faCircleExclamation;
@@ -19,20 +18,18 @@ export class LoginPage {
     public faGoogle: IconDefinition = faGooglePlusSquare;
     public faEye: IconDefinition = faEye;
 
-    public login: string = '';
-    public password: string = '';
+    public password: any;
+    public login: any;
 
-    public pwChange(event: any) {
-        console.log(event)
+    public logIn() {
+
     }
 
     public loginChange(event: any) {
-        console.log(event)
+
     }
 
-    public logIn() {
-        const payload = { username: this.login, password: this.password };
+    public pwChange(event: any) {
 
-        this.http.post('http://localhost:3000/api/auth/login', payload).subscribe(x => console.log(x))
     }
 }
