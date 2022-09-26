@@ -1,0 +1,9 @@
+@use '../../base/var' as global;
+
+.std-stepper {
+    ol {
+        &li::marker {
+            color: global.$action-blue;
+        }
+    }
+}
