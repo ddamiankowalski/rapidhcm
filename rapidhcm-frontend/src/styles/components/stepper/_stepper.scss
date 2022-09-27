@@ -1,9 +1,58 @@
 @use '../../base/var' as global;
 
-.std-stepper {
-    ol {
-        &li::marker {
-            color: global.$action-blue;
-        }
+ol {
+    list-style: none;
+    counter-reset: std-counter;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 1.2rem;
+    gap: 2rem;
+    color: global.$light-grey;
+    font-weight: 500;
+  }
+  ol li {
+    position: relative;
+    counter-increment: std-counter;
+    display: flex;
+    width: 50%;
+    font-size: 0.5rem;
+
+    &::before {
+        position: absolute;
+        left: -1.2rem;
+        top: -.15rem;
+        content: counter(std-counter);
+        font-weight: bold;
+        font-size: .4rem;
+        padding-top: .2rem;
+        padding-left: .28rem;
+        margin-right: .3rem;
+        background-color: global.$light-grey;
+        color: global.$white-background;
+        border-radius: 50%;
+        width: .8rem;
+        height: .8rem;
+        box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.01), 0px 2px 1px rgba(0, 0, 0, 0.05), 0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
     }
-}
+
+    & .active {
+        &::before {
+            position: absolute;
+            left: -1.2rem;
+            top: -.15rem;
+            content: counter(std-counter);
+            font-weight: bold;
+            font-size: .4rem;
+            padding-top: .2rem;
+            padding-left: .28rem;
+            margin-right: .3rem;
+            background-color: global.$action-blue;
+            color: global.$white-background;
+            border-radius: 50%;
+            width: .8rem;
+            height: .8rem;
+            box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.01), 0px 2px 1px rgba(0, 0, 0, 0.05), 0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);    
+        }
+     }
+  }
