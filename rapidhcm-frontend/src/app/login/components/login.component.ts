@@ -30,9 +30,10 @@ export class LoginComponent {
         console.log(event)
     }
 
-    public logIn() {
-        const payload = { username: this.login, password: this.password };
+    public handleClick(event: any) {
+        console.log(event)
+        // const payload = { username: this.login, password: this.password };
 
-        this.http.post('http://localhost:3000/api/auth/login', payload).subscribe(x => console.log(x))
+        // this.http.post('http://localhost:3000/api/auth/login', payload).subscribe(x => console.log(x))
     }
 }

@@ -3,6 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GlobalModule } from "../global/global.module";
 import { AuthPage } from "./components/authpage";
 import { LoginComponent } from "./components/login.component";
 import { RegisterComponent } from "./components/register.component";
@@ -12,7 +13,8 @@ import { RegisterComponent } from "./components/register.component";
         FontAwesomeModule,
         FormsModule,
         RouterModule,
-        BrowserModule
+        BrowserModule,
+        GlobalModule
     ],
     declarations: [
         AuthPage,

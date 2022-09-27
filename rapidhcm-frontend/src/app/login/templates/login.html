@@ -3,26 +3,14 @@
     <h3 class="m-top_small">By typing your username and password</h3>
 </div>
 <div class="form__login m-top_x-large">
-    <div class="std-input__w-label">
-        <input type="text" id="email" class="std-input" autocomplete="off" placeholder="Enter your username"  [(ngModel)]="login" (ngModelChange)="loginChange($event)">
-        <label for="email" class="std-input__label">Username</label>
-        <div class="std-input__help"></div>
+    <system-input [icon]="faCircleExclamation" [placeholder]="'Enter your username'" [label]="'Username'"></system-input>
+    <system-input [addclass]="'m-top_medium'" [icon]="faCircleExclamation" [placeholder]="'Your password'" [label]="'Password'"></system-input>
+    <div class="m-top_medium">
+        <system-input-checkbox [icon]="faCheck"></system-input-checkbox>
     </div>
-    <div class="std-input__w-label m-top_medium">
-        <input type="password" id="password" class="std-input password_field " autocomplete="off" placeholder="Your password" [(ngModel)]="password" (ngModelChange)="pwChange($event)">
-        <label for="password" class="std-input__label">Password</label>
-        <div class="std-input__help">{{ 'The password or username is incorrect' }}</div>
-        <fa-icon [icon]="faEye" class="std-input__icon-toggle"></fa-icon>
-        <!-- <fa-icon [icon]="faCircleExclamation" class="std-input__icon-error"></fa-icon> -->
+    <div class="m-top_x-medium">
+        <system-button (click)="handleClick($event)"></system-button>
     </div>
-    <div class="std-input__w-label m-top_medium">
-        <input type="checkbox" id="remember" class="std-input__checkbox">
-        <label for="remember" class="std-input__checkbox-label m-left_small">
-            Remember me?</label>
-        <fa-icon [icon]="faCheck" class="std-input__icon"></fa-icon>
-        <div class="std-input__help"></div>
-    </div>
-    <button class="std-btn__full-width m-top_x-medium" (click)="logIn()">Login</button>
     <div class="std-text m-top_x-medium center">Forgot your password?<span tabindex="0"  class="std-text__link m-left_xxx-small">Remind me</span></div>
     <div class="std-text m-top_small center">Not yet have an account?<span tabindex="0" class="std-text__link m-left_xxx-small" [routerLink]="['/auth/register']">Sign up</span></div>
 </div>
