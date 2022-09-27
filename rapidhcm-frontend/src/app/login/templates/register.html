@@ -3,17 +3,20 @@
     <h3 class="m-top_small">Fill out the form below to sign up</h3>
     <div class="m-top_large">
         <ol class="std-stepper">
-            <li class="std-stepper__element active">
+            <li class="checked">
+                <fa-icon class="icon" [icon]="faCheck"></fa-icon>
                 Login and email
             </li>
-            <li class="std-stepper__element">
+            <li [ngClass]="currentStep == 2 ? 'active' : ''">
                 Password
             </li>
         </ol>
-        <h4 class="m-top_medium">Fill out information about you username and email address</h4>
+        <h4 class="m-top_medium">
+            {{ currentStep == 1 ? 'Fill out information about you username and email address' : 'Type in your password and check your emails for a confirmation' }}
+        </h4>
     </div>
 </div>
-<div class="form__login m-top_large">
+<div class="form__login m-top_x-medium">
     <div *ngIf="currentStep === 1" class="std-input__w-label">
         <input type="text" id="email" class="std-input" autocomplete="off" placeholder="Enter your username"  [(ngModel)]="login" (ngModelChange)="loginChange($event)">
         <label for="email" class="std-input__label">Username</label>
