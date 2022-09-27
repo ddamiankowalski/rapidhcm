@@ -8,8 +8,4 @@ export class ButtonComponent {
     constructor() {}
 
     @Output() public click: EventEmitter<any> = new EventEmitter();
-
-    public logIn() {
-        console.log('logged in!')
-    }
 }
