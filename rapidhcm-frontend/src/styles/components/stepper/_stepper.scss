@@ -1,6 +1,7 @@
 @use '../../base/var' as global;
 
 .std-stepper {
+    font-weight: 100;
     & .icon {
         display: none;
     }
@@ -13,7 +14,7 @@
     margin-left: 1.2rem;
     gap: 2rem;
     color: global.$light-grey;
-    font-weight: 500;
+    font-weight: 400;
   }
   .std-stepper li {
     position: relative;
@@ -23,14 +24,14 @@
     font-size: 0.5rem;
 
     &::before {
+        font-weight: 600;
         transition: all .2s ease;
         position: absolute;
         left: -1.2rem;
         top: -.15rem;
         content: counter(std-counter);
-        font-weight: bold;
         font-size: .4rem;
-        padding-top: .2rem;
+        padding-top: .17rem;
         padding-left: .28rem;
         margin-right: .3rem;
         background-color: global.$light-grey;
@@ -47,9 +48,8 @@
             position: absolute;
             left: -1.2rem;
             top: -.15rem;
-            font-weight: bold;
             font-size: .4rem;
-            padding-top: .2rem;
+            padding-top: .17rem;
             padding-left: .28rem;
             margin-right: .3rem;
             background-color: global.$deep-grey;
@@ -69,9 +69,8 @@
             left: -1.2rem;
             top: -.15rem;
             content: counter(std-counter);
-            font-weight: bold;
             font-size: .4rem;
-            padding-top: .2rem;
+            padding-top: .17rem;
             padding-left: .28rem;
             margin-right: .3rem;
             background-color: global.$action-blue;

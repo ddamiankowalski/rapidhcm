@@ -21,6 +21,7 @@ export class LoginComponent {
 
     public login: string = '';
     public password: string = '';
+    public isLoading: boolean = false;
 
     public pwChange(event: any) {
         console.log(event)
@@ -32,6 +33,7 @@ export class LoginComponent {
 
     public handleClick(event: any) {
         console.log(event)
+        this.isLoading = true;
         // const payload = { username: this.login, password: this.password };
 
         // this.http.post('http://localhost:3000/api/auth/login', payload).subscribe(x => console.log(x))

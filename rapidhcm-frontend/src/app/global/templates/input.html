@@ -2,5 +2,6 @@
     <input [type]="type" id="email" class="std-input" [autocomplete]="autocomplete" [placeholder]="placeholder"  >
     <label for="email" class="std-input__label">{{ label }}</label>
     <fa-icon [icon]="icon" class="std-input__icon"></fa-icon>
+    <fa-icon (click)="togglePasswordVisibility()" *ngIf="eyeIcon" [icon]="type !== 'password' ? faEye : faEyeSlash" class="std-input__icon-toggle"></fa-icon>
     <div class="std-input__help">{{ helpMessage }}</div>
 </div>

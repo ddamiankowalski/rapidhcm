@@ -1,1 +1,5 @@
-<button class="std-btn__full-width" (onclick)="click.emit($event)">Login</button>
+<button class="std-btn__full-width" [ngClass]="{'button-loading': loading }" (onclick)="click.emit($event)">{{ loading ? '' : text }}
+    <div class="spinner">
+        <fa-icon *ngIf="loading" [icon]="faSpinner"></fa-icon>
+    </div>
+</button>

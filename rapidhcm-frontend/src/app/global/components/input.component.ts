@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -47,6 +48,15 @@ export class InputComponent {
      */
     @Input() public addclass?: string;
 
+    @Input() public eyeIcon?: boolean;
+
+    public faEye: IconDefinition = faEye;
+    public faEyeSlash: IconDefinition = faEyeSlash;
+
+    public togglePasswordVisibility() {
+        if(this.type == 'password') this.type = 'text';
+        else this.type = 'password';
+    }
 
     constructor() {}
 }

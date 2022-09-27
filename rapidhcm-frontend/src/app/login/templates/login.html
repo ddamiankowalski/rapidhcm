@@ -4,12 +4,12 @@
 </div>
 <div class="form__login m-top_x-large">
     <system-input [icon]="faCircleExclamation" [placeholder]="'Enter your username'" [label]="'Username'"></system-input>
-    <system-input [addclass]="'m-top_medium'" [icon]="faCircleExclamation" [placeholder]="'Your password'" [label]="'Password'"></system-input>
+    <system-input [type]="'password'" [eyeIcon]="true" [addclass]="'m-top_medium'" [icon]="faCircleExclamation" [placeholder]="'Your password'" [label]="'Password'"></system-input>
     <div class="m-top_medium">
         <system-input-checkbox [icon]="faCheck"></system-input-checkbox>
     </div>
     <div class="m-top_x-medium">
-        <system-button (click)="handleClick($event)"></system-button>
+        <system-button (click)="handleClick($event)" [loading]="isLoading" [text]="'Login'"></system-button>
     </div>
     <div class="std-text m-top_x-medium center">Forgot your password?<span tabindex="0"  class="std-text__link m-left_xxx-small">Remind me</span></div>
     <div class="std-text m-top_small center">Not yet have an account?<span tabindex="0" class="std-text__link m-left_xxx-small" [routerLink]="['/auth/register']">Sign up</span></div>
