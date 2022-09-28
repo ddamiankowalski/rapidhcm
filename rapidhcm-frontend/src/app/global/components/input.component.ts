@@ -48,6 +48,8 @@ export class InputComponent {
      */
     @Input() public addclass?: string;
 
+    @Input() public id?: string;
+
     @Input() public eyeIcon?: boolean;
 
     public faEye: IconDefinition = faEye;
