@@ -1,5 +1,5 @@
 <div class="std-input__w-label" [ngClass]="addclass">
-    <input [type]="type" [id]="id" class="std-input" [autocomplete]="autocomplete" [placeholder]="placeholder"  >
+    <input [type]="type" [id]="id" class="std-input" [autocomplete]="autocomplete" [placeholder]="placeholder" required>
     <label for="email" class="std-input__label">{{ label }}</label>
     <fa-icon [icon]="icon" class="std-input__icon"></fa-icon>
     <fa-icon (click)="togglePasswordVisibility()" *ngIf="eyeIcon" [icon]="type !== 'password' ? faEye : faEyeSlash" class="std-input__icon-toggle"></fa-icon>

@@ -2,18 +2,28 @@
     <h2>Login</h2>
     <h3 class="m-top_small">By typing your username and password</h3>
 </div>
-<div class="form__login m-top_x-large">
-    <system-input [icon]="faCircleExclamation" [placeholder]="'Enter your username'" [label]="'Username'"></system-input>
-    <system-input [type]="'password'" [eyeIcon]="true" [addclass]="'m-top_medium'" [icon]="faCircleExclamation" [placeholder]="'Your password'" [label]="'Password'"></system-input>
-    <div class="m-top_x-medium">
+<form #loginForm="ngForm" class="form__login m-top_x-large" (ngSubmit)="submitLogin($event)">
+    <div class="std-input__w-label">
+        <input type="text" #name="ngModel" id="username" name="username" class="std-input" [ngClass]="{'has_error': name.errors && name.touched}" placeholder="Your username" (ngModelChange)="loginChange($event)" [(ngModel)]="username" required minlength="4" maxlength="24">
+        <label for="email" class="std-input__label">Username</label>
+        <fa-icon [icon]="faCircleExclamation" [ngClass]="name.errors && name.touched ? 'std-input__icon-has-error' : 'std-input__icon'"></fa-icon>
+    </div>
+    <div class="std-input__w-label m-top_medium">
+        <input [type]="!showPassword ? 'password' : 'text'" #pw="ngModel" id="password" name="password" class="std-input" [ngClass]="{'has_error': pw.errors && pw.touched}" placeholder="Your password" [(ngModel)]="password" required>
+        <label for="email" class="std-input__label">Password</label>
+        <fa-icon *ngIf="pw.errors == null || !pw.touched" (click)="togglePasswordVisibility()" [icon]="showPassword ? faEye : faEyeSlash" class="std-input__icon-toggle"></fa-icon>
+        <fa-icon [icon]="faCircleExclamation" [ngClass]="pw.errors && pw.touched ? 'std-input__icon-has-error' : 'std-input__icon'"></fa-icon>
+        <div class="std-input__help has_error">{{ generateErrMessage(name, pw) | json }}</div>
+    </div>
+    <div class="m-top_large">
         <system-input-checkbox [icon]="faCheck"></system-input-checkbox>
     </div>
-    <div class="m-top_x-medium">
+    <div class="m-top_medium">
         <system-button (click)="handleClick($event)" [loading]="isLoading" [text]="'Login'"></system-button>
     </div>
     <div class="std-text m-top_x-medium center">Forgot your password?<span tabindex="0"  class="std-text__link m-left_xxx-small">Remind me</span></div>
-    <div class="std-text m-top_small center">Not yet have an account?<span tabindex="0" class="std-text__link m-left_xxx-small" [routerLink]="['/auth/register']">Sign up</span></div>
-</div>
+    <div class="std-text m-top_small center">Not yet have an account?<span tabindex="0" class="std-text__link m-left_xxx-small">Sign up</span></div>
+</form>
 <div class="card__auxillary-login">
     <div class="login-element">
         <fa-icon class="icon" [icon]="faFacebook"></fa-icon>
