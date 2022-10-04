@@ -2,21 +2,32 @@
 
 .std-btn {
     font-size: .5rem;
+    background-color: global.$action-blue;
+    color: global.$white-background;
 
     &__full-width {
-        transition: all .7s ease;
+        color: global.$white-background;
+        background-color: global.$action-blue;
+
+        &:disabled {
+            background-color: global.$disabled-grey;
+            color: global.$deep-grey;
+            filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.01)) drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.05)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+            &:hover {
+                
+            }
+        }
+        transition: all .4s ease;
         font-size: .5rem;
         width: 100%;
         border: none;
-        background-color: global.$action-blue;
-        color: global.$white-background;
         font-weight: 500;
         border-radius: .3rem;
         height: 1.7rem;
         cursor: pointer;
         filter: drop-shadow(0px 10px 4px rgba(0, 0, 0, 0.01)) drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.05)) drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.09)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
 
-        &:hover {
+        &:hover:not(:disabled) {
             filter: drop-shadow(0px 15px 6px rgba(0, 0, 0, 0.01)) drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.05)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.09)) drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
             transform: translateY(-.1rem);
         }

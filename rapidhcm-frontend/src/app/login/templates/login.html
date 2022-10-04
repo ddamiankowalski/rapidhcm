@@ -4,22 +4,32 @@
 </div>
 <form #loginForm="ngForm" class="form__login m-top_x-large" (ngSubmit)="submitLogin($event)">
     <div class="std-input__w-label">
-        <input type="text" #name="ngModel" id="username" name="username" class="std-input" [ngClass]="{'has_error': name.errors && name.touched}" placeholder="Your username" (ngModelChange)="loginChange($event)" [(ngModel)]="username" required minlength="4" maxlength="24">
-        <label for="email" class="std-input__label">Username</label>
+        <input [disabled]="isLoading" type="text" #name="ngModel" id="username" name="username" class="std-input" [ngClass]="{'has_error': name.errors && name.touched}" placeholder="Your username" (ngModelChange)="loginChange($event)" [(ngModel)]="username" required>
+        <label for="email" class="std-input__label" [ngClass]="{'disabled': isLoading}">Username</label>
         <fa-icon [icon]="faCircleExclamation" [ngClass]="name.errors && name.touched ? 'std-input__icon-has-error' : 'std-input__icon'"></fa-icon>
     </div>
     <div class="std-input__w-label m-top_medium">
-        <input [type]="!showPassword ? 'password' : 'text'" #pw="ngModel" id="password" name="password" class="std-input" [ngClass]="{'has_error': pw.errors && pw.touched}" placeholder="Your password" [(ngModel)]="password" required>
-        <label for="email" class="std-input__label">Password</label>
+        <input [disabled]="isLoading" [type]="!showPassword ? 'password' : 'text'" #pw="ngModel" id="password" name="password" class="std-input" [ngClass]="{'has_error': pw.errors && pw.touched}" placeholder="Your password" [(ngModel)]="password" required>
+        <label for="email" class="std-input__label" [ngClass]="{'disabled': isLoading}">Password</label>
         <fa-icon *ngIf="pw.errors == null || !pw.touched" (click)="togglePasswordVisibility()" [icon]="showPassword ? faEye : faEyeSlash" class="std-input__icon-toggle"></fa-icon>
         <fa-icon [icon]="faCircleExclamation" [ngClass]="pw.errors && pw.touched ? 'std-input__icon-has-error' : 'std-input__icon'"></fa-icon>
-        <div class="std-input__help has_error">{{ generateErrMessage(name, pw) | json }}</div>
+        <div class="std-input__help has_error">{{ generateErrMessage(name, pw) }}</div>
     </div>
     <div class="m-top_large">
-        <system-input-checkbox [icon]="faCheck"></system-input-checkbox>
+        <div class="std-input__w-label">
+            <input [disabled]="isLoading" type="checkbox" id="remember" class="std-input__checkbox">
+            <label for="remember" class="std-input__checkbox-label m-left_small" [ngClass]="{'disabled': isLoading}">
+                Remember me?</label>
+            <fa-icon [icon]="faCheck" class="std-input__icon"></fa-icon>
+            <div class="std-input__help"></div>
+        </div>
     </div>
     <div class="m-top_medium">
-        <system-button (click)="handleClick($event)" [loading]="isLoading" [text]="'Login'"></system-button>
+        <button class="std-btn__full-width" [disabled]="!loginForm.valid" [ngClass]="{'button-loading': isLoading }" type="submit">{{ isLoading ? '' : 'Login' }}
+            <div class="spinner">
+                <fa-icon *ngIf="isLoading" [icon]="faSpinner"></fa-icon>
+            </div>
+        </button>
     </div>
     <div class="std-text m-top_x-medium center">Forgot your password?<span tabindex="0"  class="std-text__link m-left_xxx-small">Remind me</span></div>
     <div class="std-text m-top_small center">Not yet have an account?<span tabindex="0" class="std-text__link m-left_xxx-small">Sign up</span></div>

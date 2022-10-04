@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare, faGooglePlusSquare, faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { faCheck, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faCircleExclamation, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector: 'login-page',
@@ -19,6 +19,7 @@ export class LoginComponent {
     public faGoogle: IconDefinition = faGooglePlusSquare;
     public faEye: IconDefinition = faEye;
     public faEyeSlash: IconDefinition = faEyeSlash;
+    public faSpinner: IconDefinition = faSpinner;
 
     public togglePasswordVisibility() {
         this.showPassword = !this.showPassword;
@@ -40,14 +41,17 @@ export class LoginComponent {
 
     public submitLogin(event: any) {
         console.log('eslo', event)
+        this.isLoading = true;
     }
 
     public generateErrMessage(username: any, password: any) {
-        if(username.control.errors && Object.keys(username.control.errors).length && username.control.touched) {
-            return username.control.errors;
-        } else if(password.control.errors && Object.keys(password.control.errors).length && password.control.touched) {
-            return password.control.errors;
+        if(
+            username.control.errors && username.control.touched ||
+            password.control.errors && password.control.touched
+        ) {
+            return "Username or password cannot be empty"
         }
+        return '';
     }
 
     public handleClick(event: any) {

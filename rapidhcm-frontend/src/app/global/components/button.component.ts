@@ -14,5 +14,7 @@ export class ButtonComponent {
 
     @Input() public loading: boolean = false;
 
+    @Input() public disabled: boolean = false;
+
     public faSpinner: IconDefinition = faSpinner;
 }
