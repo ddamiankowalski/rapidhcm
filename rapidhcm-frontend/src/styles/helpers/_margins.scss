@@ -2,6 +2,12 @@
 
 .m {
     &-top {
+        &_xxx-small {
+            margin-top: .1rem;
+        }
+        &_xx-small {
+            margin-top: .2rem;
+        }
         &_x-small {
             margin-top: .3rem;
         }
