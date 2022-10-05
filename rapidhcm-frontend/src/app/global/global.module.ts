@@ -17,7 +17,7 @@ import { InputCheckboxComponent } from "./components/inputcheckbox.component";
         InputComponent,
         InputCheckboxComponent,
         ButtonComponent,
-        AlertComponent,
+        AlertComponent
     ],
     exports: [
         CardComponent,

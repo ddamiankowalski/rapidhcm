@@ -11,6 +11,7 @@ import { AuthModule } from './login/login.module';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { GlobalModule } from './global/global.module';
 import { AlertService } from './global/services/alert.service';
+import { OutletModule } from './outlets/outlets.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AlertService } from './global/services/alert.service';
     AuthenticationSharedModule.forRoot(),
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    GlobalModule
+    GlobalModule,
+    OutletModule
   ],
   providers: [
     {
