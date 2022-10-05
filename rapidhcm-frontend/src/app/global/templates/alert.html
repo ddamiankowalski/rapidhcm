@@ -1,5 +1,7 @@
-<div class="std-alert">
-    <div class="alert__header">{{ alertHeader }}</div>
-    <div class="alert__desc m-top_xx-small">{{ alertDescription }}</div>
-    <fa-icon class="alert__icon" [icon]="faTimes"></fa-icon>
-</div>
+<ng-template [ngIf]="alertHeader || alertDescription">
+    <div class="std-alert" [ngClass]="{'alert__err' : alertMessageType == 'error', 'alert_success' : alertMessageType == 'success'}">
+        <div class="alert__header">{{ alertHeader }}</div>
+        <div class="alert__desc m-top_xx-small">{{ alertDescription }}</div>
+        <fa-icon class="alert__icon" [icon]="faTimes"></fa-icon>
+    </div>
+</ng-template>

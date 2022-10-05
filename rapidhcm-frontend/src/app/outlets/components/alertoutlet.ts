@@ -10,8 +10,9 @@ export class AlertOutlet implements AfterViewInit {
 
     ngAfterViewInit(): void {
         this.alert.vcr = this.alertContainer;
-        this.alert.createAlert();
-     }
+        setTimeout(() => this.alert.createAlert('se'), 500)
+    }
+
     constructor(
         public alert: AlertService
     ) {}
