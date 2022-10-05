@@ -9,6 +9,7 @@ import { GlobalInterceptor } from './authentication/services/globalinterceptor.s
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthModule } from './login/login.module';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { GlobalModule } from './global/global.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     FontAwesomeModule,
     AuthenticationSharedModule.forRoot(),
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    GlobalModule
   ],
   providers: [
     {
