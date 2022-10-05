@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthModule } from './login/login.module';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { GlobalModule } from './global/global.module';
+import { AlertService } from './global/services/alert.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GlobalModule } from './global/global.module';
       provide: HTTP_INTERCEPTORS,
       useClass: GlobalInterceptor,
       multi: true
-    }
+    },
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

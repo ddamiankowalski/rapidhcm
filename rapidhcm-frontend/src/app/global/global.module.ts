@@ -17,7 +17,7 @@ import { InputCheckboxComponent } from "./components/inputcheckbox.component";
         InputComponent,
         InputCheckboxComponent,
         ButtonComponent,
-        AlertComponent
+        AlertComponent,
     ],
     exports: [
         CardComponent,
@@ -26,7 +26,8 @@ import { InputCheckboxComponent } from "./components/inputcheckbox.component";
         ButtonComponent,
         AlertComponent
     ],
-    providers: []
+    providers: [
+    ]
 })
 export class GlobalModule {
     constructor() {}
