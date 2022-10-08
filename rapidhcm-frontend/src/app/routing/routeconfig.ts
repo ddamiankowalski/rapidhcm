@@ -1,9 +1,14 @@
 import { Routes } from "@angular/router";
+import { GlobalLoaderComponent } from "../global/components/globalloader.component";
 import { AuthPage } from "../login/components/authpage";
 import { LoginComponent } from "../login/components/login.component";
 import { RegisterComponent } from "../login/components/register.component";
 
 export const routes: Routes = [
+    {
+        path: '**',
+        component: GlobalLoaderComponent
+    },
     {
         path: 'auth',
         component: AuthPage,
@@ -27,9 +32,5 @@ export const routes: Routes = [
     {
         path: 'dashboard',
         loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule)
-    },
-    {
-        path: '**',
-        redirectTo: 'auth/login'
     }
 ]

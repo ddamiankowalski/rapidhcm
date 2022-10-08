@@ -4,7 +4,7 @@
 </div>
 <form #loginForm="ngForm" class="form__login m-top_x-large" (ngSubmit)="submitLogin($event)">
     <div class="std-input__w-label">
-        <input [disabled]="isLoading" type="text" #name="ngModel" id="username" name="username" class="std-input" [ngClass]="{'has_error': name.errors && name.touched}" placeholder="Your username" (ngModelChange)="loginChange($event)" [(ngModel)]="username" required>
+        <input [disabled]="isLoading" type="text" #name="ngModel" id="username" name="username" class="std-input" [ngClass]="{'has_error': name.errors && name.touched}" placeholder="Your username" [(ngModel)]="username" required>
         <label for="email" class="std-input__label" [ngClass]="{'disabled': isLoading}">Username</label>
         <fa-icon [icon]="faCircleExclamation" [ngClass]="name.errors && name.touched ? 'std-input__icon-has-error' : 'std-input__icon'"></fa-icon>
     </div>

@@ -19,14 +19,7 @@ export class AuthenticationService {
         }
     }
 
-    public login(): Observable<any> {
-        // send a log in, verify if its correct. if it is
-        return this.http.post('http://localhost:3000/api/auth/login', { username: "damiasn", password: "danuiab" }, { headers: new HttpHeaders().set('Accept', 'application/json') })
+    public login(username: string, password: string): Observable<any> {
+        return this.http.post('http://localhost:3000/api/auth/login', { username, password }, { headers: new HttpHeaders().set('Accept', 'application/json') })
     }
-
-
-    // this.httpClient.post('http://localhost:3000/api/auth/register', { username: "damian", password: "danuiab", email: "dkowalski@gmail.com" }, { headers: new HttpHeaders().set('Accept', 'application/json') }).pipe(
-    //     catchError((err) => {
-    //       return throwError(err)
-    //     })
 }

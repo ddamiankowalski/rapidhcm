@@ -1,16 +1,24 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookSquare, faGooglePlusSquare, faTwitterSquare } from "@fortawesome/free-brands-svg-icons";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faCheck, faCircleExclamation, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { AuthenticationService } from "src/app/authentication/services/authentication.service";
+import { AlertService } from "src/app/global/services/alert.service";
 
 @Component({
     selector: 'login-page',
     templateUrl: '../templates/login.html'
 })
 export class LoginComponent {
-    constructor(public http: HttpClient) {}
+    constructor(
+        public http: HttpClient, 
+        public auth: AuthenticationService,
+        public alert: AlertService,
+        public router: Router
+    ) {}
 
     public faCheck: IconDefinition = faCheck;
     public faCircleExclamation: IconDefinition = faCircleExclamation;
@@ -31,19 +39,6 @@ export class LoginComponent {
     public password: string = '';
     public isLoading: boolean = false;
 
-    public pwChange(event: any) {
-        console.log(event)
-    }
-
-    public loginChange(event: any) {
-        console.log(event)
-    }
-
-    public submitLogin(event: any) {
-        console.log('eslo', event)
-        this.isLoading = true;
-    }
-
     public generateErrMessage(username: any, password: any) {
         if(
             username.control.errors && username.control.touched ||
@@ -54,11 +49,22 @@ export class LoginComponent {
         return '';
     }
 
-    public handleClick(event: any) {
-        console.log(event)
+    public submitLogin(event: any) {
         this.isLoading = true;
-        // const payload = { username: this.login, password: this.password };
+        this.auth.login(this.username, this.password).subscribe(
+            res => this.handleLogin(res),
+            err => this.handleLoginErr(err)
+        )
+    }
 
-        // this.http.post('http://localhost:3000/api/auth/login', payload).subscribe(x => console.log(x))
+    public handleLogin(res: any): void {
+        this.isLoading = false;
+        localStorage.setItem('rapid_token', res.access_token);
+        this.router.navigate(['/', 'dashboard']);
+    }
+
+    public handleLoginErr(err: any): void {
+        this.isLoading = false;
+        this.alert.createAlert('Invalid credentials', 'Please check username and password and log in again');
     }
 }
