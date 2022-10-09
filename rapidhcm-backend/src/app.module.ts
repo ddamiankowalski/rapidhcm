@@ -22,8 +22,8 @@ import { AllExceptionFilter } from './filters/all-exception.filter';
       password: 't4jn3h4slo',
       database: 'rapidhcm',
       entities: [User],
-      synchronize: true,
-      dropSchema: true
+      synchronize: false,
+      dropSchema: false
     }),
     AuthModule,
     UsersModule

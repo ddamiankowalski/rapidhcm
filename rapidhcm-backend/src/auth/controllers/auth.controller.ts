@@ -1,6 +1,7 @@
 import { Controller, Post, UseGuards, Request, UseFilters } from "@nestjs/common";
 import { QueryExceptionFilter } from "src/filters/query-exception.filter";
 import { AuthService } from "../auth.service";
+import { JwtAuthGuard } from "../jwt-auth.guard";
 import { LocalAuthGuard } from "../local-auth.guard";
 
 @Controller()
