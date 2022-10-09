@@ -22,4 +22,9 @@ export class AuthenticationService {
     public login(username: string, password: string): Observable<any> {
         return this.http.post('http://localhost:3000/api/auth/login', { username, password }, { headers: new HttpHeaders().set('Accept', 'application/json') })
     }
+
+    public isLoggedIn() {
+        const token = this.getToken();
+        return this.getDecodedToken(token);
+    }
 }

@@ -14,11 +14,12 @@
     margin-top: 1.5rem;
     animation-name: showLoaderText;
     animation-duration: 1s;
+    font-weight: 400;
   }
 
   & .wrapper_action {
     color: global.$matted-blue;
-    font-weight: 400;
+    font-weight: 500;
   }
 }
 
