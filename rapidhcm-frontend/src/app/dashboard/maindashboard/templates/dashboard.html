@@ -1,1 +1,6 @@
-essa byq
+<ng-template [ngIf]="configuration.isConfigured$ | async" [ngIfElse]="loader">
+    <dashboard-top-menu-container class="std-dashboard__top-menu-container"></dashboard-top-menu-container>
+</ng-template>
+<ng-template #loader>
+    <system-global-loader></system-global-loader>
+</ng-template>

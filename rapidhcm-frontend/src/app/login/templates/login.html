@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="m-top_medium">
-        <button class="std-btn__full-width" [disabled]="!loginForm.valid" [ngClass]="{'button-loading': isLoading }" type="submit">{{ isLoading ? '' : 'Login' }}
+        <button class="std-btn btn__full-width" [disabled]="!loginForm.valid" [ngClass]="{'button-loading': isLoading }" type="submit">{{ isLoading ? '' : 'Login' }}
             <div class="spinner">
                 <fa-icon *ngIf="isLoading" [icon]="faSpinner"></fa-icon>
             </div>

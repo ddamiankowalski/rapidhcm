@@ -2,10 +2,14 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import jwt_decode from "jwt-decode";
 import { Observable, of } from "rxjs";
+import { ConfigurationService } from "src/app/dashboard/services/configuration.service";
 
 @Injectable()
 export class AuthenticationService {
-    constructor(public http: HttpClient) {}
+    constructor(
+        public http: HttpClient,
+        public configuration: ConfigurationService
+    ) {}
 
     public getToken(): any {
         return localStorage.getItem('rapid_token');
@@ -26,5 +30,9 @@ export class AuthenticationService {
     public isLoggedIn() {
         const token = this.getToken();
         return this.getDecodedToken(token);
+    }
+
+    public clearSession() {
+        localStorage.removeItem('rapid_token');
     }
 }

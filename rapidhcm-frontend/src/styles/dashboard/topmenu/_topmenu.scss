@@ -1,0 +1,23 @@
+@use '../../base/var' as global;
+
+.std-dashboard {
+    &__top-menu-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+        height: 2.3rem;
+        background-color: global.$dark-background;
+    }
+}
+
+.dashboard__left-menu {
+
+}
+
+.dashboard__right-menu {
+    display: flex;
+    flex-direction: row;
+}

@@ -17,11 +17,12 @@ export class GlobalInterceptor implements HttpInterceptor {
                 Authorization: `Bearer ${this.auth.getToken()}`
             }
         })
-        console.log(req)
         return next.handle(req).pipe(
             catchError((error: HttpErrorResponse) => {
+                console.log(error)
                 if(error.status == 401) {
-                    this.router.navigate(['/', 'auth/login'])
+                    this.auth.clearSession();
+                    this.router.navigate(['auth']);
                 }
                 return throwError(() => new Error(error.message));
             })

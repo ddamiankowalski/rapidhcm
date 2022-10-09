@@ -2,8 +2,10 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { AlertComponent } from "./components/alert.component";
+import { AvatarComponent } from "./components/avatar.component";
 import { ButtonComponent } from "./components/button.component";
 import { CardComponent } from "./components/card.component";
+import { GlobalLoaderComponent } from "./components/globalloader.component";
 import { InputComponent } from "./components/input.component";
 import { InputCheckboxComponent } from "./components/inputcheckbox.component";
 
@@ -17,14 +19,18 @@ import { InputCheckboxComponent } from "./components/inputcheckbox.component";
         InputComponent,
         InputCheckboxComponent,
         ButtonComponent,
-        AlertComponent
+        AlertComponent,
+        GlobalLoaderComponent,
+        AvatarComponent
     ],
     exports: [
         CardComponent,
         InputComponent,
         InputCheckboxComponent,
         ButtonComponent,
-        AlertComponent
+        AlertComponent,
+        GlobalLoaderComponent,
+        AvatarComponent
     ],
     providers: [
     ]

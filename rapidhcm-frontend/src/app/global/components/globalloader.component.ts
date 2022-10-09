@@ -10,9 +10,8 @@ export class GlobalLoaderComponent implements OnInit {
         public router: Router
     ) {}
 
+    public currentStep: string = 'Modules';
+
     ngOnInit(): void {
-        setTimeout(() => {
-            this.router.navigate(['/', 'auth']);
-        }, 5000)
     }
 }

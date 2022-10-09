@@ -54,4 +54,28 @@
             margin-left: 1.5rem;
         }
     }
+
+    &-right {
+        &_xxx-small {
+            margin-right: .1rem;
+        }
+        &_xx-small {
+            margin-right: .2rem;
+        }
+        &_x-small {
+            margin-right: .3rem;
+        }
+        &_small {
+            margin-right: .4rem;
+        }
+        &_medium {
+            margin-right: .9rem;
+        }
+        &_large {
+            margin-right: 1rem;
+        }
+        &_x-large {
+            margin-right: 1.5rem;
+        }
+    }
 }

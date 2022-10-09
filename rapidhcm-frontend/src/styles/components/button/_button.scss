@@ -5,7 +5,30 @@
     background-color: global.$action-blue;
     color: global.$white-background;
 
-    &__full-width {
+    &.btn__outlined {
+        transition: all .3s;
+        background-color: rgba($color: #000000, $alpha: 0);
+        font-size: .5rem;
+        border-radius: .3rem;
+        height: 1.7rem;
+        border: none;
+        cursor: pointer;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: .005rem solid global.$white-background;
+
+        &:hover {
+            color: global.$dark-background;
+            border-color: global.$dark-background;
+            background-color: global.$white-background;
+        }
+
+        & .aux__icon {
+            margin-right: .35rem;
+        }
+    }
+
+    &.btn__full-width {
         color: global.$white-background;
         background-color: global.$action-blue;
 

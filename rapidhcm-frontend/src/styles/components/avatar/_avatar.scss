@@ -1,0 +1,20 @@
+@use '../../base/var' as global;
+
+.std-avatar {
+    transition: all .3s;
+    color: global.$white-background;
+    font-size: .5rem;
+    height: 1.7rem;
+    width: 1.7rem;
+    border-radius: .3rem;
+    border: 0.005rem solid global.$white-background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: global.$white-background;
+        color: global.$dark-background;
+    }
+}

@@ -21,6 +21,13 @@
     color: global.$matted-blue;
     font-weight: 500;
   }
+
+  & .wrapper_subaction_desctiption {
+    margin-top: .8rem;
+    font-weight: 300;
+    font-size: .8rem;
+    text-align: center;
+  }
 }
 
 @keyframes showLoader {
@@ -29,6 +36,15 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes hideLoader {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0;
   }
 }
 

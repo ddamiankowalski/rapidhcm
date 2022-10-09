@@ -13,11 +13,12 @@ export class GlobalCanLoad implements CanActivate, CanLoad {
     ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        this.auth.isLoggedIn();
-        return true
+        const decodedToken = this.auth.isLoggedIn();
+        return decodedToken == null ? true : this.router.createUrlTree(['/', 'dashboard']);
     }
 
     canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        return false
+        // for now this is true, becuse we check the token if we go to auth. If we go to dashboard, there will be interceptors that will return to auth
+        return true;
     }
 }
