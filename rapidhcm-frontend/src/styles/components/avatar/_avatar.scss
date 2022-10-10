@@ -2,12 +2,12 @@
 
 .std-avatar {
     transition: all .3s;
-    color: global.$white-background;
+    color: global.$grey-background;
     font-size: .5rem;
     height: 1.7rem;
     width: 1.7rem;
     border-radius: .3rem;
-    border: 0.005rem solid global.$white-background;
+    border: 0.005rem solid global.$grey-background;
     display: flex;
     align-items: center;
     justify-content: center;

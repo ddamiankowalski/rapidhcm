@@ -15,12 +15,10 @@
         cursor: pointer;
         padding-left: 1rem;
         padding-right: 1rem;
-        border: .005rem solid global.$white-background;
+        color: global.$disabled-grey;
 
         &:hover {
-            color: global.$dark-background;
-            border-color: global.$dark-background;
-            background-color: global.$white-background;
+            color: global.$white-background;
         }
 
         & .aux__icon {
