@@ -1,8 +1,25 @@
-<div class="dashboard__left-menu">
-    <system-button text="Messages" class="m-right_small" [outlined]="true" [auxIcon]="faMessage"></system-button>
-    <system-button text="Notifications" [outlined]="true" [auxIcon]="faBell"></system-button>
-</div>
-<div class="dashboard__right-menu">
-    <system-button text="Log out" class="m-right_small" [outlined]="true" [auxIcon]="faDoorOpen"></system-button>
-    <system-avatar></system-avatar>
+<div class="std-dashboard__top">
+    <div class="std-dashboard__top-menu-accordion">
+
+    </div>
+    <div class="dashboard__search-menu">
+        <div class="search-menu_input">
+            <input placeholder="Search in modules">
+        </div>
+        <div class="std-btn__icon">
+            <fa-icon [icon]="faSearch"></fa-icon>
+        </div>
+    </div>
+    <div class="std-dashboard__top-menu-container">
+        <div class="dashboard__right-menu">
+            <system-button text="Messages" [outlined]="true" [auxIcon]="faMessage"></system-button>
+            <system-button text="Settings" [outlined]="true" [auxIcon]="faCogs"></system-button>
+            <system-button text="Logout" class="m-right_large" [outlined]="true" [auxIcon]="faDoorOpen"></system-button>
+            <div class="std-line__vertical"></div>
+            <div class="dashboard__avatar">
+                Welcome,<span class="dashboard__username">Damian</span>
+                <system-avatar></system-avatar>
+            </div>
+        </div>
+    </div>
 </div>

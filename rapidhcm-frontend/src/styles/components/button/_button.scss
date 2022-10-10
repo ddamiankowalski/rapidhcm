@@ -5,6 +5,29 @@
     background-color: global.$action-blue;
     color: global.$white-background;
 
+    &__icon {
+
+        &:hover {
+            transform: translateY(-.1rem);
+        }
+
+        transition: all .5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        top: 0.3rem;
+        right: -.85rem;
+        position: absolute;
+        width: 1.7rem;
+        height: 1.7rem;
+        border-radius: .3rem;
+        background-color: global.$action-blue;
+        color: global.$grey-background;
+        font-size: .5rem;
+        filter: drop-shadow(0px 6px 2px rgba(0, 0, 0, 0.01)) drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.05)) drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.09)) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+    }
+
     &.btn__outlined {
         transition: all .3s;
         background-color: rgba($color: #000000, $alpha: 0);
@@ -13,8 +36,8 @@
         height: 1.7rem;
         border: none;
         cursor: pointer;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: .8rem;
+        padding-right: .8rem;
         color: global.$disabled-grey;
 
         &:hover {

@@ -1,0 +1,9 @@
+@use '../../base/var' as global;
+
+.std-line {
+    &__vertical {
+        width: 0.01rem;
+        height: 1rem;
+        background-color: global.$deep-grey;
+    }
+}

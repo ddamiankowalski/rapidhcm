@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faBell, faDoorOpen, faMessage } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faCogs, faDoorOpen, faMessage, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector: 'dashboard-top-menu-container',
@@ -12,6 +12,6 @@ export class TopMenuContainerComponent {
     public faMessage: IconDefinition = faMessage;
     public faBell: IconDefinition = faBell;
     public faDoorOpen: IconDefinition = faDoorOpen;
-
-
+    public faCogs: IconDefinition = faCogs;
+    public faSearch: IconDefinition = faSearch;
 }
