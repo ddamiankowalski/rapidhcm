@@ -1,5 +1,13 @@
 <ng-template [ngIf]="configuration.isConfigured$ | async" [ngIfElse]="loader">
     <dashboard-top-menu-container></dashboard-top-menu-container>
+    <div class="main-dashboard__wrapper" down-to-bottom>
+        <div class="accordion__wrapper">
+            <system-accordion-container></system-accordion-container>
+        </div>
+        <div class="content_wrapper">
+            <system-dashboard-content></system-dashboard-content>
+        </div>
+    </div>
 </ng-template>
 <ng-template #loader>
     <system-global-loader></system-global-loader>

@@ -1,0 +1,17 @@
+@use '../../base/var' as global;
+
+.main-dashboard__wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.accordion__wrapper {
+    display: block;
+    flex-basis: 20%;
+    min-width: 14rem;
+}
+
+.content_wrapper {
+    flex-grow: 1;
+}

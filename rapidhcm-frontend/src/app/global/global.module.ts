@@ -8,6 +8,7 @@ import { CardComponent } from "./components/card.component";
 import { GlobalLoaderComponent } from "./components/globalloader.component";
 import { InputComponent } from "./components/input.component";
 import { InputCheckboxComponent } from "./components/inputcheckbox.component";
+import { DownToBottomDirective } from "./directives/downtobottom.directive";
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { InputCheckboxComponent } from "./components/inputcheckbox.component";
         ButtonComponent,
         AlertComponent,
         GlobalLoaderComponent,
-        AvatarComponent
+        AvatarComponent,
+        DownToBottomDirective
     ],
     exports: [
         CardComponent,
@@ -30,7 +32,8 @@ import { InputCheckboxComponent } from "./components/inputcheckbox.component";
         ButtonComponent,
         AlertComponent,
         GlobalLoaderComponent,
-        AvatarComponent
+        AvatarComponent,
+        DownToBottomDirective
     ],
     providers: [
     ]
