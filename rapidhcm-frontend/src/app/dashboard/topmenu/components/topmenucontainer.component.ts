@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faBell, faCogs, faDoorOpen, faMessage, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faMagento } from "@fortawesome/free-brands-svg-icons";
+import { faAnchorLock, faBell, faCogs, faDoorOpen, faHaykal, faMessage, faSackXmark, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector: 'dashboard-top-menu-container',
@@ -14,4 +15,9 @@ export class TopMenuContainerComponent {
     public faDoorOpen: IconDefinition = faDoorOpen;
     public faCogs: IconDefinition = faCogs;
     public faSearch: IconDefinition = faSearch;
+    public faAnchorLock: IconDefinition = faAnchorLock;
+    public faAnchorLock2: IconDefinition = faSackXmark;
+    public faAnchorLock3: IconDefinition = faHaykal;
+    public faAnchorLock4: IconDefinition = faMagento;
+
 }

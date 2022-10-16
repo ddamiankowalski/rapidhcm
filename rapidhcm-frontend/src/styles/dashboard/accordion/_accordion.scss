@@ -2,8 +2,142 @@
 
 .std-accordion {
     &.accordion__container {
+        position: relative;
         width: 100%;
         height: 100%;
         background-color: global.$dark-background;
+    }
+
+    & .accordion__header {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.6rem;
+        font-weight: 500;
+        padding-top: 1.3rem;
+        margin-bottom: 1.5rem;
+
+        & .accordion__hamburger {
+            cursor: pointer;
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+            color: global.$white-background;
+        }
+    
+        & .accordion__message {
+            flex-grow: 1;
+            color: global.$white-background;
+        }
+    
+        & .accordion__icon {
+            position: relative;
+            padding-right: 1.5rem;
+            color: global.$white-background;
+
+            & .icon-notification {
+                position: absolute;
+                background-color: global.$matted-blue;
+                width: .55rem;
+                height: .55rem;
+                border-radius: .1rem;
+                bottom: -.2rem;
+                right: 1.2rem;
+                font-size: .4rem;
+                text-align: center;
+                padding-top: .05rem;
+            }
+        }
+    }
+
+    .accordion__item {
+        transition: all .5s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: global.$disabled-grey;
+        font-size: .55rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+        height: 2rem;
+
+        &:hover {
+            cursor: pointer;
+            color: global.$white-background;
+            background: rgba(87, 96, 111, 0.15);
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: .15rem;
+                height: 2rem;
+                background-color: global.$matted-blue;
+            }
+        }
+
+        & .item-icon {
+            margin-right: 0.8rem;
+        }
+
+        & .item-text {
+            font-weight: 400;
+        }
+    }
+
+    & .accordion__footer {
+        position: absolute;
+        background: rgba(87, 96, 111, 0.15);
+        width: 100%;
+        height: 3rem;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        & .item-container {
+            padding: 1rem;
+            cursor: pointer;
+
+            &:hover .item-icon {
+                transform: translateY(-.1rem);
+                color: global.$deep-grey;
+            }
+        }
+
+        & .item-icon {
+            transition: all .4s;
+            position: relative;
+            font-size: .7rem;
+            color: global.$footer-icon;
+            cursor: pointer;
+
+        }
+
+        & .notification {
+            position: absolute;
+            font-size: .35rem;
+            font-weight: 600;
+            text-align: center;
+            padding-top: .1rem;
+            color: global.$white-background;
+            bottom: -.2rem;
+            right: -.2rem;
+            background-color: global.$yellow-warning;
+            height: .55rem;
+            width: .55rem;
+            border-radius: .1rem;
+            filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.01)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.05)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+
+            &.yellow {
+
+            }
+
+            &.red {
+                background-color: global.$error;
+            }
+
+            &.green {
+                background-color: global.$success;
+            }
+        }
     }
 }

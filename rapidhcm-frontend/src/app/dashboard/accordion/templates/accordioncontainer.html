@@ -1,3 +1,49 @@
 <div class="std-accordion accordion__container">
-    
+    <div class="accordion__header">
+        <div class="accordion__hamburger">
+            <fa-icon [icon]="faAlignJustify"></fa-icon>
+        </div>
+        <div class="accordion__message">Shared Calendars</div>
+        <div class="accordion__icon">
+            <fa-icon [icon]="faBell"></fa-icon>
+            <div class="icon-notification">5</div>
+        </div>
+    </div>
+    <!-- in the future add ngfor here with components -->
+    <div class="accordion__item">
+        <fa-icon class="item-icon" [icon]="faComments"></fa-icon>
+        <span class="item-text">News</span>
+    </div>
+    <div class="accordion__item">
+        <fa-icon class="item-icon" [icon]="faCalendarDay"></fa-icon>
+        <span class="item-text">Calendar</span>
+    </div>
+    <div class="accordion__item">
+        <fa-icon class="item-icon" [icon]="faCogs"></fa-icon>
+        <span class="item-text">Settings</span>
+    </div>
+    <div class="accordion__item">
+        <fa-icon class="item-icon" [icon]="faUserFriends"></fa-icon>
+        <span class="item-text">Contacts</span>
+    </div>
+    <div class="accordion__footer">
+        <div class="item-container">
+            <div class="item-icon">
+                <fa-icon class="item-icon" [icon]="faInbox"></fa-icon>
+                <div class="notification yellow">12</div>
+            </div>
+        </div>
+        <div class="item-container">
+        <div class="item-icon">
+            <fa-icon class="item-icon" [icon]="faHome"></fa-icon>
+            <div class="notification red">5</div>
+        </div>
+        </div>
+        <div class="item-container">
+        <div class="item-icon">
+            <fa-icon class="item-icon" [icon]="faMapMarkedAlt"></fa-icon>
+            <!-- <div class="notification green"></div> -->
+        </div>
+        </div>
+    </div>
 </div>
