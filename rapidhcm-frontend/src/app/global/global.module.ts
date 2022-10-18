@@ -8,6 +8,7 @@ import { CardComponent } from "./components/card.component";
 import { GlobalLoaderComponent } from "./components/globalloader.component";
 import { InputComponent } from "./components/input.component";
 import { InputCheckboxComponent } from "./components/inputcheckbox.component";
+import { SliderCard } from "./components/slidercard.component";
 import { DownToBottomDirective } from "./directives/downtobottom.directive";
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         AlertComponent,
         GlobalLoaderComponent,
         AvatarComponent,
-        DownToBottomDirective
+        DownToBottomDirective,
+        SliderCard
     ],
     exports: [
         CardComponent,
@@ -33,7 +35,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         AlertComponent,
         GlobalLoaderComponent,
         AvatarComponent,
-        DownToBottomDirective
+        DownToBottomDirective,
+        SliderCard
     ],
     providers: [
     ]

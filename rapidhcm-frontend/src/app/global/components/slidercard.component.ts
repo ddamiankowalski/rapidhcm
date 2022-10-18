@@ -9,6 +9,18 @@ export class SliderCard {
 
     @Input() public imagePath: string | undefined;
 
+    @Input() public sliderTitle: string | undefined;
+
+    @Input() public sliderSubTitle: string | undefined;
+
+    @Input() public sliderDesc: string | undefined;
+
+    public isActive: string | undefined;
+
+    public toggleActive($event: any) {
+        this.isActive = $event.type == 'mouseover' ? 'active' : '';
+    }
+
     get image() {
         return this.imagePath + '.png';
     }

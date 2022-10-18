@@ -1,8 +1,11 @@
 import { NgModule } from "@angular/core";
+import { GlobalModule } from "src/app/global/global.module";
 import { ContentContainerComponent } from "./components/contentcontainer.component";
 
 @NgModule({
-    imports: [],
+    imports: [
+        GlobalModule
+    ],
     declarations: [
         ContentContainerComponent
     ],

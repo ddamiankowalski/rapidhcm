@@ -1,0 +1,5 @@
+<div class="std-slider-card" [ngClass]="isActive" (mouseover)="toggleActive($event)" (mouseout)="toggleActive($event)">
+ <span class="slider-title">{{ sliderTitle }}</span>
+ <span [ngClass]="isActive" class="slider-subtitle m-top_small">{{ sliderSubTitle }}</span>
+ <span class="slider-desc">{{ sliderDesc }}</span>
+</div>
