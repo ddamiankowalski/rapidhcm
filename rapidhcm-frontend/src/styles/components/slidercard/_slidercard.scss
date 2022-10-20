@@ -5,9 +5,11 @@
     width: 8.3rem;
     height: 5.2rem;
     border-radius: .5rem;
-    background-color: red;
     color: global.$white-background;
     padding: .9rem .7rem;
+    background-size: cover;
+    background-position: 100%;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.02)) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.08));
 
     &.active {
@@ -18,6 +20,7 @@
     &:hover {
         cursor: pointer;
         transform: scale(1.05);
+        box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.25);
     }
 
     & .slider-title {
@@ -29,13 +32,29 @@
     & .slider-subtitle {
         display: block;
         visibility: hidden;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 0.45rem;
 
         &.active {
             transition: all .3s;
             visibility: visible;
             transform: translateY(-.1rem);
+        }
+    }
+
+    & .slider-desc {
+        transition: all .3s;
+        display: block;
+        font-size: 0.43rem;
+        font-weight: 500;
+        line-height: .8rem;
+        height: 1.7rem;
+        transform: translateY(-.3rem);
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.active {
+            transform: translateY(.15rem);
         }
     }
 }

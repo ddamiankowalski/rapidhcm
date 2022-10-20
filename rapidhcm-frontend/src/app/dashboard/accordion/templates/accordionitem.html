@@ -1,0 +1,9 @@
+<div [ngClass]="isActive ? 'active' : ''" class="accordion__item" (click)="toggleActive()">
+    <fa-icon class="item-icon" [icon]="icon"></fa-icon>
+    <span class="item-text">{{ itemText }}</span>
+</div>
+<div #container class="accordion__subitem-container">
+    <div #containerSub class="accordion__subitem" [ngClass]="isActive ? 'active' : ''">
+        <ng-content></ng-content>
+    </div>
+</div>

@@ -1,5 +1,7 @@
-<div class="std-slider-card" [ngClass]="isActive" (mouseover)="toggleActive($event)" (mouseout)="toggleActive($event)">
+<div class="std-slider-card" [style.background-image]="'url(/assets/slidercards/' + bg + '.jpg)'" [ngClass]="isActive" (mouseover)="toggleActive($event)" (mouseout)="toggleActive($event)">
  <span class="slider-title">{{ sliderTitle }}</span>
  <span [ngClass]="isActive" class="slider-subtitle m-top_small">{{ sliderSubTitle }}</span>
- <span class="slider-desc">{{ sliderDesc }}</span>
+ <span [ngClass]="isActive" class="slider-desc">
+    {{ sliderDesc }}
+</span>
 </div>

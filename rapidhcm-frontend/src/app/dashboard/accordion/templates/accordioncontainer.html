@@ -10,22 +10,13 @@
         </div>
     </div>
     <!-- in the future add ngfor here with components -->
-    <div class="accordion__item">
-        <fa-icon class="item-icon" [icon]="faComments"></fa-icon>
-        <span class="item-text">News</span>
-    </div>
-    <div class="accordion__item">
-        <fa-icon class="item-icon" [icon]="faCalendarDay"></fa-icon>
-        <span class="item-text">Calendar</span>
-    </div>
-    <div class="accordion__item">
-        <fa-icon class="item-icon" [icon]="faCogs"></fa-icon>
-        <span class="item-text">Settings</span>
-    </div>
-    <div class="accordion__item">
-        <fa-icon class="item-icon" [icon]="faUserFriends"></fa-icon>
-        <span class="item-text">Contacts</span>
-    </div>
+    <system-accordion-item [icon]="faComments" itemText="News"></system-accordion-item>
+    <system-accordion-item [icon]="faCalendarDay" itemText="Calendar">
+        <system-accordion-subitem subItemText="My Calendars"></system-accordion-subitem>
+        <system-accordion-subitem subItemText="Shared Calendars"></system-accordion-subitem>
+    </system-accordion-item>
+    <system-accordion-item [icon]="faCogs" itemText="Settings"></system-accordion-item>
+    <system-accordion-item [icon]="faUserFriends" itemText="Contacts"></system-accordion-item>
     <div class="accordion__footer">
         <div class="item-container">
             <div class="item-icon">

@@ -1,16 +1,23 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { SystemAccordionContainerComponent } from "./components/accordioncontainer.component";
+import { AccordionItemComponent } from "./components/accordionitem.component";
+import { AccordionSubItemComponent } from "./components/accordionsubitem.component";
 
 @NgModule({
     imports: [
-        FontAwesomeModule
+        FontAwesomeModule,
+        CommonModule
     ],
     exports: [
-        SystemAccordionContainerComponent
+        SystemAccordionContainerComponent,
+        AccordionItemComponent
     ],
     declarations: [
-        SystemAccordionContainerComponent
+        SystemAccordionContainerComponent,
+        AccordionItemComponent,
+        AccordionSubItemComponent
     ]
 })
 export class AccordionModule {

@@ -15,6 +15,9 @@ export class SliderCard {
 
     @Input() public sliderDesc: string | undefined;
 
+    @Input() public bg: string | undefined;
+    
+
     public isActive: string | undefined;
 
     public toggleActive($event: any) {

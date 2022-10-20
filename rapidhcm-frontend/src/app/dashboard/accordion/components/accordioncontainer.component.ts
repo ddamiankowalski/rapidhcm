@@ -19,4 +19,6 @@ export class SystemAccordionContainerComponent {
     public faHome: IconDefinition = faHome;
     public faMapMarkedAlt: IconDefinition = faMapMarkedAlt;
 
+    public isActive: boolean = false;
+
 }
