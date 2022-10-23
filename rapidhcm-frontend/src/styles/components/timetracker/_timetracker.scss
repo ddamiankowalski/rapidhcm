@@ -1,5 +1,66 @@
 @use '../../base/var' as global;
 
+.task-container {
+    margin-top: .5rem;
+    display: flex;
+    justify-content: space-between;
+
+    & .tasks {
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;   
+    }    
+
+    & .progress {
+        position: relative;
+        height: 5rem;
+        width: 5rem;
+
+        & .outer::before {
+            content: "";
+            position: absolute;
+            height: 4rem;
+            width: 4rem;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        & .outer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            & .value {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: .8rem;
+                font-weight: 600;
+                color: global.$action-blue;
+
+                & .time-value {
+                    margin-top: .3rem;
+                    font-size: .4rem;
+                    font-weight: 400;
+                    color: global.$dark-background;
+                }
+            }
+        }
+    }
+}
+
 .std-timetracker {
     display: flex;
 
@@ -31,9 +92,20 @@
                 color: global.$white-background;
                 height: 1.2rem;
                 width: 1.2rem;
-                background-color: global.$yellow-warning;
                 border-radius: .3rem;
                 filter: drop-shadow(0px 4px 1px rgba(0, 0, 0, 0.01)) drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.05)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+            
+                &.yellow {
+                    background-color: global.$yellow-warning;
+                }
+
+                &.red {
+                    background-color: global.$error;
+                }
+
+                &.green {
+                    background-color: global.$success;
+                }
             }
         }
     }

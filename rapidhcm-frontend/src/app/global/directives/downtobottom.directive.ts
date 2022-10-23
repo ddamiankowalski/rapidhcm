@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, HostListener } from "@angular/core";
+import { AfterViewInit, Directive, ElementRef, HostListener, Input } from "@angular/core";
 import { UtilsService } from "../services/utils.service";
 
 @Directive({
@@ -6,6 +6,9 @@ import { UtilsService } from "../services/utils.service";
 })
 export class DownToBottomDirective implements AfterViewInit{
     @HostListener('window:resize', ['$event'])
+
+    @Input() public marginDiff: number = 0;
+
 	public onResize(event?: any) {
         this.resizeToBottom();
 	}
@@ -24,6 +27,6 @@ export class DownToBottomDirective implements AfterViewInit{
     }
 
     public resizeToBottom(value: number = window.innerHeight) {
-        if(this.dashboardWrapper.style) this.dashboardWrapper.style.height = value + 'px';
+        if(this.dashboardWrapper.style) this.dashboardWrapper.style.height = value - this.utils.convertRemToPixels(this.marginDiff) + 'px';
     }
 }
