@@ -9,6 +9,7 @@ import { GlobalLoaderComponent } from "./components/globalloader.component";
 import { InputComponent } from "./components/input.component";
 import { InputCheckboxComponent } from "./components/inputcheckbox.component";
 import { SliderCard } from "./components/slidercard.component";
+import { TimeTrackerComponent } from "./components/timetracker.component";
 import { DownToBottomDirective } from "./directives/downtobottom.directive";
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         GlobalLoaderComponent,
         AvatarComponent,
         DownToBottomDirective,
-        SliderCard
+        SliderCard,
+        TimeTrackerComponent
     ],
     exports: [
         CardComponent,
@@ -36,7 +38,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         GlobalLoaderComponent,
         AvatarComponent,
         DownToBottomDirective,
-        SliderCard
+        SliderCard,
+        TimeTrackerComponent
     ],
     providers: [
     ]

@@ -8,10 +8,9 @@ export class DownToBottomDirective implements AfterViewInit{
     @HostListener('window:resize', ['$event'])
 	public onResize(event?: any) {
         this.resizeToBottom();
-        console.log('resize')
 	}
 
-    private dashboardWrapper: HTMLElement | undefined;
+    private dashboardWrapper: HTMLElement;
 
     constructor(
         public elementRef: ElementRef,
@@ -25,6 +24,6 @@ export class DownToBottomDirective implements AfterViewInit{
     }
 
     public resizeToBottom(value: number = window.innerHeight) {
-        this.dashboardWrapper!.style.height = value - this.utils.convertRemToPixels(2.3) + 'px';
+        if(this.dashboardWrapper.style) this.dashboardWrapper.style.height = value + 'px';
     }
 }

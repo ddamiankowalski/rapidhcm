@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { GlobalModule } from "src/app/global/global.module";
+import { FavItemComponent } from "./components/favitem.component";
 import { TopMenuContainerComponent } from "./components/topmenucontainer.component";
 
 @NgModule({
@@ -12,7 +13,8 @@ import { TopMenuContainerComponent } from "./components/topmenucontainer.compone
         TopMenuContainerComponent
     ],
     declarations: [
-        TopMenuContainerComponent
+        TopMenuContainerComponent,
+        FavItemComponent
     ]
 })
 export class TopMenuModule {}

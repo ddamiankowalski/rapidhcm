@@ -1,7 +1,4 @@
 <div class="std-dashboard__top">
-    <div class="std-dashboard__top-menu-logo">
-
-    </div>
     <div class="dashboard__search-menu">
         <div class="search-menu_input">
             <input placeholder="Search in modules">
@@ -11,6 +8,11 @@
         </div>
     </div>
     <div class="std-dashboard__top-menu-container">
+        <div class="dashboard__fav-menu">
+            <system-fav-item [icon]="faInfoCircle"></system-fav-item>
+            <system-fav-item [icon]="faCalendarAlt"></system-fav-item>
+            <system-fav-item [icon]="faUserCircle"></system-fav-item>
+        </div>
         <div class="dashboard__right-menu">
             <system-button text="Messages" [outlined]="true" [auxIcon]="faMessage"></system-button>
             <system-button text="Settings" [outlined]="true" [auxIcon]="faCogs"></system-button>

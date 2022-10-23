@@ -13,7 +13,9 @@
 }
 
 .content_wrapper {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .content__sliders {
@@ -26,4 +28,15 @@
     background-color: global.$grey-background;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+}
+
+.std-news__container {
+    padding: 1.5rem;
+    background-color: global.$white-background;
+    flex-grow: 1;
+    width: 100%;
+
+    & .row {
+        display: flex;
+    }
 }

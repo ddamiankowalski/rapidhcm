@@ -1,3 +1,12 @@
-<div class="card__login">
-    <ng-content></ng-content>
+<div class="card">
+    <div *ngIf="sidePicture" class="card-sidephoto" [style.background-image]="'url(/assets/cards/' + bg + '.jpg)'"></div>
+    <div class="card-content">
+        <div class="card-icon">
+            <fa-icon [icon]="faHeart"></fa-icon>
+        </div>
+        <ng-content></ng-content>
+        <span *ngIf="showReadMore" class="action-text">
+            Read more
+        </span>
+    </div>
 </div>

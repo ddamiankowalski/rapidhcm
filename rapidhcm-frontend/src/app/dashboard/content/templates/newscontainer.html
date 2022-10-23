@@ -1,0 +1,22 @@
+<!-- this is where in the future we will add the grid probably -->
+<div class="card-row">
+    <system-card [showReadMore]="true" [sidePicture]="'left'">
+        <div class="header">
+            Current Candidates
+        </div>
+        <div class="description">
+            Show current candidature, explore the candidates. Find out accept and contact them as well as schedule meetings
+        </div>
+    </system-card>
+    <system-card>
+        <div class="header">
+            Timetracker
+        </div>
+        <div class="description">
+            This is where you can supply time trackers on your current day
+        </div>
+        <system-time-tracker [icon]="faPencilRuler" taskName="Dev tasks"></system-time-tracker>
+        <system-time-tracker [icon]="faPencilRuler" taskName="Meetings"></system-time-tracker>
+        <system-time-tracker [icon]="faPencilRuler" taskName="Other"></system-time-tracker>
+    </system-card>
+</div>

@@ -8,10 +8,10 @@
     &__icon {
 
         &:hover {
-            transform: translateY(-.1rem);
+            transform: translateY(-.05rem);
         }
 
-        transition: all .5s;
+        transition: all .3s;
         display: flex;
         align-items: center;
         justify-content: center;
