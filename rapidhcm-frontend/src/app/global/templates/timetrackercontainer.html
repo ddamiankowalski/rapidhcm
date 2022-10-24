@@ -1,0 +1,28 @@
+<system-card>
+    <div class="timetracker-container">
+        <div class="header">
+            Timetracker
+        </div>
+        <div class="description">
+            This is where you can supply time trackers on your current day
+        </div>
+        <div class="task-container">
+            <div class="tasks">
+                <system-time-tracker-task color="yellow" [icon]="faPencilRuler" taskName="Dev tasks">
+                </system-time-tracker-task>
+                <system-time-tracker-task color="red" [icon]="faCalendarPlus" taskName="Meetings">
+                </system-time-tracker-task>
+                <system-time-tracker-task color="green" [icon]="faQuestionCircle" taskName="Other">
+                </system-time-tracker-task>
+            </div>
+            <div #progress class="progress">
+                <div class="outer" [ngStyle]="{'background': degValue}">
+                    <div class="value">
+                        {{ degPercent }}%
+                        <span class="time-value">3h 27m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</system-card>

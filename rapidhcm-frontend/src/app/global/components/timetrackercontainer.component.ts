@@ -1,15 +1,13 @@
-import { AfterViewInit, Component, ElementRef, HostBinding, ViewChild } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import { faCalendarPlus, faFileCircleQuestion, faPencilRuler } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
-    selector: 'system-news-container',
-    templateUrl: '../templates/newscontainer.html'
+    selector: 'time-tracker-container',
+    templateUrl: '../templates/timetrackercontainer.html'
 })
-export class SystemNewsContainer implements AfterViewInit {
+export class TimeTrackerContainer {
     @ViewChild('progress') public progress: ElementRef | undefined;
-    @HostBinding('style.grid-row') gridRow = 'span 6'; 
 
     public _degValue: number = 0;
     public endValue: number = 75;
@@ -35,16 +33,11 @@ export class SystemNewsContainer implements AfterViewInit {
             if(this._degValue == this.endValue) return;
             this._degValue++;
             this.startDegValueSetting();
-        }, this.easeOutQuint(this._degValue / 100) * 20);
-    }
-
-    public easeOutQuint(x: number): number {
-        return 1 - Math.pow(1 - x, 5);
+        }, 10);
     }
 
     public faPencilRuler: IconDefinition = faPencilRuler;
     public faCalendarPlus: IconDefinition = faCalendarPlus;
     public faQuestionCircle: IconDefinition = faFileCircleQuestion;
-
     constructor() {}
 }

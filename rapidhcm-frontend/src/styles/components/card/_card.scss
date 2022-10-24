@@ -30,7 +30,7 @@
     & .card-content {
         flex-grow: 1;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: column;
         padding: .7rem .7rem;
         flex-basis: 65%;
@@ -89,6 +89,7 @@
 
     &__login {
         @include card-base();
+        overflow: visible;
         width: 16rem;
         padding: 2.3rem 2.5rem;
         position: absolute;
@@ -103,6 +104,7 @@
     }
 
     &__auxillary-login {
+        display: block;
         position: absolute;
         top: 0;
         right: -2.8rem;

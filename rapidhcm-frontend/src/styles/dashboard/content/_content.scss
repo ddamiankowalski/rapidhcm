@@ -35,14 +35,18 @@
     grid-row: span 3;
 }
 
-.std-news__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2.9rem, 1fr));
-    grid-template-rows: repeat(12, 1fr);
-    column-gap: 1.2rem;
-    row-gap: 1.2rem;
+.std-news_bottom {
     padding: 1.5rem;
     background-color: global.$white-background;
+}
+
+.std-news__container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(2.9rem, 1fr));
+    grid-template-rows: repeat(9, 8.5%);
+    column-gap: 1.66%;
+    row-gap: 2.93%;
     flex-grow: 1;
     width: 100%;
     max-width: 100%;
