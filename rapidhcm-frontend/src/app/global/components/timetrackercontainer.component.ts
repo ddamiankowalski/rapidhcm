@@ -9,7 +9,7 @@ import { faCalendarPlus, faFileCircleQuestion, faPencilRuler } from "@fortawesom
 export class TimeTrackerContainer {
     @ViewChild('progress') public progress: ElementRef | undefined;
 
-    public _degValue: number = 0;
+    public _degValue: number = 75;
     public endValue: number = 75;
 
     public ngAfterViewInit(): void {
@@ -29,11 +29,12 @@ export class TimeTrackerContainer {
     }
 
     public startDegValueSetting() {
-        setTimeout(() => {
-            if(this._degValue == this.endValue) return;
-            this._degValue++;
-            this.startDegValueSetting();
-        }, 10);
+        this._degValue == this.endValue
+        // setTimeout(() => {
+        //     if(this._degValue == this.endValue) return;
+        //     this._degValue++;
+        //     this.startDegValueSetting();
+        // }, 10);
     }
 
     public faPencilRuler: IconDefinition = faPencilRuler;

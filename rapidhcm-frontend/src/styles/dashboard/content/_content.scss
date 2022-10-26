@@ -7,9 +7,18 @@
 }
 
 .accordion__wrapper {
+    transition: all .4s;
+    height: 100%;
     display: block;
-    flex-basis: 20%;
     min-width: 14rem;
+    width: 14rem;
+    overflow: hidden;
+
+    &.active {
+        transition: all .4s;
+        min-width: 3rem;
+        width: 3rem;
+    }
 }
 
 .content_wrapper {

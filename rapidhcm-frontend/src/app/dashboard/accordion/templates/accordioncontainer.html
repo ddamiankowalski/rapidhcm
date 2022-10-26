@@ -1,44 +1,51 @@
-<div class="std-accordion accordion__container">
-    <div class="accordion__header">
-        <div class="accordion__hamburger">
-            <fa-icon [icon]="faAlignJustify"></fa-icon>
-        </div>
-        <div class="accordion__message">Shared Calendars</div>
-        <div class="accordion__icon">
-            <fa-icon [icon]="faBell"></fa-icon>
-            <div class="icon-notification">5</div>
-        </div>
-    </div>
-    <!-- in the future add ngfor here with components -->
-    <system-accordion-item [icon]="faComments" itemText="News"></system-accordion-item>
-    <system-accordion-item [icon]="faCalendarDay" itemText="Calendar">
-        <system-accordion-subitem subItemText="My Calendars"></system-accordion-subitem>
-        <system-accordion-subitem subItemText="Shared Calendars"></system-accordion-subitem>
-    </system-accordion-item>
-    <system-accordion-item [icon]="faCogs" itemText="Settings">
-        <system-accordion-subitem subItemText="Profile Settings"></system-accordion-subitem>
-        <system-accordion-subitem subItemText="System Settings"></system-accordion-subitem>
-        <system-accordion-subitem subItemText="General"></system-accordion-subitem>
-    </system-accordion-item>
-    <system-accordion-item [icon]="faUserFriends" itemText="Contacts"></system-accordion-item>
-    <div class="accordion__footer">
-        <div class="item-container">
-            <div class="item-icon">
-                <fa-icon class="item-icon" [icon]="faInbox"></fa-icon>
-                <div class="notification yellow">12</div>
+<div #wrapper class="accordion__wrapper">
+    <div class="std-accordion accordion__container">
+        <div class="accordion__header">
+            <div class="accordion__hamburger" [ngClass]="{'hide-action': !isAccordionToggled}" (click)="toggleAccordion($event)">
+                <!-- <fa-icon [icon]="faAlignJustify"></fa-icon> -->
+                <div class="lines-container">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <div class="accordion__message" [ngClass]="{'hidden': isAccordionToggled}">Shared Calendars</div>
+            <div class="accordion__icon" [ngClass]="{'hidden': isAccordionToggled}">
+                <fa-icon [icon]="faBell"></fa-icon>
+                <div class="icon-notification">5</div>
             </div>
         </div>
-        <div class="item-container">
-        <div class="item-icon">
-            <fa-icon class="item-icon" [icon]="faHome"></fa-icon>
-            <div class="notification red">5</div>
-        </div>
-        </div>
-        <div class="item-container">
-        <div class="item-icon">
-            <fa-icon class="item-icon" [icon]="faMapMarkedAlt"></fa-icon>
-            <!-- <div class="notification green"></div> -->
-        </div>
+        <!-- in the future add ngfor here with components -->
+        <system-accordion-item [icon]="faComments" itemText="News"></system-accordion-item>
+        <system-accordion-item [icon]="faCalendarDay" itemText="Calendar">
+            <system-accordion-subitem subItemText="My Calendars"></system-accordion-subitem>
+            <system-accordion-subitem subItemText="Shared Calendars"></system-accordion-subitem>
+        </system-accordion-item>
+        <system-accordion-item [icon]="faCogs" itemText="Settings">
+            <system-accordion-subitem subItemText="Profile Settings"></system-accordion-subitem>
+            <system-accordion-subitem subItemText="System Settings"></system-accordion-subitem>
+            <system-accordion-subitem subItemText="General"></system-accordion-subitem>
+        </system-accordion-item>
+        <system-accordion-item [icon]="faUserFriends" itemText="Contacts"></system-accordion-item>
+        <div class="accordion__footer" [ngClass]="{'hidden': isAccordionToggled}">
+            <div class="item-container">
+                <div class="item-icon">
+                    <fa-icon class="item-icon" [icon]="faInbox"></fa-icon>
+                    <div class="notification yellow">12</div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-icon">
+                    <fa-icon class="item-icon" [icon]="faHome"></fa-icon>
+                    <div class="notification red">5</div>
+                </div>
+            </div>
+            <div class="item-container">
+                <div class="item-icon">
+                    <fa-icon class="item-icon" [icon]="faMapMarkedAlt"></fa-icon>
+                    <!-- <div class="notification green"></div> -->
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,7 +1,10 @@
 <div class="std-dashboard__top">
     <div class="dashboard__search-menu">
         <div class="search-menu_input">
-            <input placeholder="Search in modules">
+            <div (click)="cancelSearchInput()" class="cancel-input" [ngClass]="{'active': canCancelInput}">
+                <fa-icon [icon]="faTimes"></fa-icon>
+            </div>
+            <input placeholder="Search in modules" [(ngModel)]="searchInput">
         </div>
         <div class="std-btn__icon">
             <fa-icon [icon]="faSearch"></fa-icon>

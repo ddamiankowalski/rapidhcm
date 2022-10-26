@@ -23,8 +23,9 @@ export class AccordionItemComponent implements OnInit, OnDestroy, AfterViewInit 
         this.accordion.accordionItemClicked$.next(this.itemText);
         this.isActive = true;
         this.renderer.setStyle(this.container.nativeElement, 'height', this.containerSub.nativeElement.offsetHeight + "px");
-
     }
+
+    public isAccordionToggled: boolean = true;
 
     constructor(
         public accordion: AccordionService,
@@ -36,6 +37,13 @@ export class AccordionItemComponent implements OnInit, OnDestroy, AfterViewInit 
             this.isActive = false;
             this.renderer.setStyle(this.container.nativeElement, 'height', 0 + "px");
         }));
+
+        this.subscriptions.add(this.accordion.accordionToggle$.subscribe(isToggled => {
+            if(isToggled) {
+                this.renderer.setStyle(this.container.nativeElement, 'height', 0 + "px");
+            }
+            this.isAccordionToggled = isToggled
+        }))
     }
 
     ngOnDestroy(): void {

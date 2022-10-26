@@ -3,6 +3,7 @@
 .std-dashboard {
     &__top {
         display: flex;
+        justify-content: flex-end;
     }
 
     &__top-menu-container {
@@ -27,6 +28,7 @@
 }
 
 .dashboard__search-menu {
+    flex-grow: 1;
     position: relative;
     width: 15%;
     min-width: 12rem;
@@ -34,9 +36,33 @@
     & .search-menu_input {
         font-size: .5rem;
         font-weight: 500;
+        position: relative;
         display: flex;
         align-items: center;
         height: 100%;
+
+        & .cancel-input {
+            transition: all .3s;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) translateX(1.6rem);
+            color: global.$action-blue;
+            opacity: 0;
+
+            &.active {
+                transform: all .3s;
+                opacity: 1;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &.active + input {
+                padding-left: .8rem;
+            }
+        }
 
         input {
             padding-left: .3rem;

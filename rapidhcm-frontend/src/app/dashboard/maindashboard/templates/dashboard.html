@@ -1,8 +1,6 @@
 <ng-template down-to-bottom [ngIf]="configuration.isConfigured$ | async" [ngIfElse]="loader">
     <div class="main-dashboard__wrapper" down-to-bottom>
-        <div class="accordion__wrapper">
-            <system-accordion-container></system-accordion-container>
-        </div>
+        <system-accordion-container></system-accordion-container>
         <div class="content_wrapper">
             <dashboard-top-menu-container></dashboard-top-menu-container>
             <system-dashboard-content></system-dashboard-content>

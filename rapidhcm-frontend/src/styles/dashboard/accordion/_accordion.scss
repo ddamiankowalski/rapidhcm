@@ -1,5 +1,10 @@
 @use '../../base/var' as global;
 
+.hidden {
+    transition: all .3s;
+    opacity: 0;
+}
+
 .std-accordion {
     &.accordion__container {
         position: relative;
@@ -21,9 +26,44 @@
             padding-left: 1.2rem;
             padding-right: 1.2rem;
             color: global.$white-background;
+
+            &.hide-action .lines-container {
+                width: .7rem;
+            }
+
+            &.hide-action .lines-container > .line:nth-child(2) {
+                transition: all .3s;
+                opacity: 0;
+            }
+
+            &.hide-action .lines-container > .line:nth-child(1) {
+                transition: all .3s;
+                transform: rotate(46deg) translateY(.168rem) translateX(.1rem);
+            }
+
+            &.hide-action .lines-container > .line:nth-child(3) {
+                transition: all .3s;
+                transform: rotate(-46deg) translateY(-.17rem) translateX(.1rem);
+            }
+
+            & .lines-container {
+                display: flex;
+                flex-direction: column;
+                width: .6rem;
+                height: .7rem;
+                justify-content: space-evenly;
+
+                & .line {
+                    transition: all .3s;
+                    height: .08rem;
+                    width: 100%;
+                    background-color: global.$disabled-grey;
+                }
+            }
         }
     
         & .accordion__message {
+            white-space: nowrap;
             flex-grow: 1;
             color: global.$white-background;
         }
