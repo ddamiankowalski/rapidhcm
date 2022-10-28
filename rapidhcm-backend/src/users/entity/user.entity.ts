@@ -1,9 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Candidate } from "src/candidates/entity/candidate.entity";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany } from "typeorm";
 
 @Entity()
 export class User {
     @PrimaryGeneratedColumn('uuid')
-    userId: string;
+    id: string;
 
     @Column({ length: 125, unique: true })
     username: string;
@@ -19,6 +20,9 @@ export class User {
     
     @Column({ nullable: false })
     password: string;
+
+    @OneToMany(() => Candidate, (candidate) => candidate.user)
+    candidate: Candidate[]
 
     @CreateDateColumn()
     createdDate: Date;
