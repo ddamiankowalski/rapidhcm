@@ -197,6 +197,7 @@
 }
 
 .accordion__subitem-container {
+    white-space: nowrap;
     transition: .3s all;
     overflow: hidden;
     height: 0;
