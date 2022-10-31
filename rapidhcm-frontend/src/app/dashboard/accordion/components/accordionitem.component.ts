@@ -20,7 +20,7 @@ export class AccordionItemComponent implements OnInit, OnDestroy, AfterViewInit 
     public containerHeight: number | undefined; 
 
     public toggleActive(): void {
-        this.accordion.accordionItemClicked$.next(this.itemText);
+        this.accordion.changeTab(this.itemText);
         this.isActive = true;
         this.renderer.setStyle(this.container.nativeElement, 'height', this.containerSub.nativeElement.offsetHeight + "px");
     }

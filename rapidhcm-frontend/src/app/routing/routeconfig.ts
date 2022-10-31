@@ -1,5 +1,8 @@
 import { Routes } from "@angular/router";
 import { GlobalCanLoad } from "../authentication/services/globalcanload.service";
+import { DashboardComponent } from "../dashboard/maindashboard/components/dashboard.component";
+import { NewsComponent } from "../dashboard/maindashboard/components/news.component";
+import { ModuleContainerComponent } from "../dashboard/moduleview/components/modulecontainer.component";
 import { AuthPage } from "../login/components/authpage";
 import { LoginComponent } from "../login/components/login.component";
 import { RegisterComponent } from "../login/components/register.component";
@@ -26,7 +29,7 @@ export const routes: Routes = [
     },
     {
         path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardModule),
+        loadChildren: () => import('../dashboard/maindashboard/maindashboard.module').then(m => m.MainDashboard),
         canLoad: [GlobalCanLoad]
     },
     {
@@ -34,3 +37,20 @@ export const routes: Routes = [
         redirectTo: 'auth'
     },
 ]
+
+export const dashboardRoutes: Routes = [
+    {
+        path: '',
+        component: DashboardComponent,
+        children: [
+            {
+                path: 'module',
+                component: ModuleContainerComponent
+            },
+            {
+                path: '',
+                component: NewsComponent
+            },
+        ]
+    }
+];
