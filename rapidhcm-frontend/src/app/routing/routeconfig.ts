@@ -45,11 +45,13 @@ export const dashboardRoutes: Routes = [
         children: [
             {
                 path: 'module',
-                component: ModuleContainerComponent
+                component: ModuleContainerComponent,
+                data: { animation: 'showModule' }
             },
             {
                 path: '',
-                component: NewsComponent
+                component: NewsComponent,
+                data: { animation: 'showRoute' }
             },
         ]
     }

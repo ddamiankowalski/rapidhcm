@@ -25,7 +25,6 @@ import { OutletModule } from './outlets/outlets.module';
     FontAwesomeModule,
     AuthenticationSharedModule.forRoot(),
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     GlobalModule,
     OutletModule
   ],
