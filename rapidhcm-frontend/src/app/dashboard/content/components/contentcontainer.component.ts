@@ -12,7 +12,7 @@ import { ChildrenOutletContexts } from "@angular/router";
                 opacity: '1'
               })),
               state('showModule', style({
-                height: '0rem',
+                height: '4rem',
                 overflow: 'hidden',
                 opacity: '0',
                 backgroundColor: 'none'
