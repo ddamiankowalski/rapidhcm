@@ -1,7 +1,10 @@
-<div class="std-content content__container">
-    <div [@routeAnimations]="getRouteAnimationData()" class="std-content content__sliders">
+<div class="std-content content__container" [@routeAnimations]="getRouteAnimationData()">
+    <div *ngIf="router.url === '/dashboard'" class="std-content content__sliders" @sliderAnimations>
         <system-slider-card [bg]="'1'" [sliderTitle]="'Weather component'" [sliderSubTitle]="'Is it windy?'" [sliderDesc]="'Explore the weather in different places of the world'"></system-slider-card>
         <system-slider-card [bg]="'2'"  [sliderTitle]="'Maps component'" [sliderSubTitle]="'Check out the world'" [sliderDesc]="'Simply explore the world, see how to get from one place to another'"></system-slider-card>
         <system-slider-card [bg]="'3'" [sliderTitle]="'Your accounts'" [sliderSubTitle]="'Organize your contacts!'" [sliderDesc]="'Organise your contacts and accounts in a nice and convenient way - its simple'"></system-slider-card>
+    </div>
+    <div class="content__module" *ngIf="router.url === '/dashboard/module'" @moduleAnimations>
+        <system-module-options></system-module-options>
     </div>
 </div>

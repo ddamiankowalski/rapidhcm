@@ -8,6 +8,8 @@ import { CardComponent } from "./components/card.component";
 import { GlobalLoaderComponent } from "./components/globalloader.component";
 import { InputComponent } from "./components/input.component";
 import { InputCheckboxComponent } from "./components/inputcheckbox.component";
+import { ModuleOptionComponent } from "./components/moduleoption.component";
+import { ModuleOptionsComponent } from "./components/moduleoptions.component";
 import { SliderCard } from "./components/slidercard.component";
 import { TimeTrackerContainer } from "./components/timetrackercontainer.component";
 import { TimeTrackerTaskComponent } from "./components/timetrackertask.component";
@@ -29,7 +31,9 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         DownToBottomDirective,
         SliderCard,
         TimeTrackerTaskComponent,
-        TimeTrackerContainer
+        TimeTrackerContainer,
+        ModuleOptionsComponent,
+        ModuleOptionComponent
     ],
     exports: [
         CardComponent,
@@ -42,7 +46,9 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         DownToBottomDirective,
         SliderCard,
         TimeTrackerTaskComponent,
-        TimeTrackerContainer
+        TimeTrackerContainer,
+        ModuleOptionsComponent,
+        ModuleOptionComponent
     ],
     providers: [
     ]

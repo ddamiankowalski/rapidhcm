@@ -1,6 +1,6 @@
-import { animate, query, state, style, transition, trigger } from "@angular/animations";
+import { animate, animateChild, group, query, stagger, state, style, transition, trigger } from "@angular/animations";
 import { Component } from "@angular/core";
-import { ChildrenOutletContexts } from "@angular/router";
+import { ChildrenOutletContexts, Router } from "@angular/router";
 
 @Component({
     selector: 'system-dashboard-content',
@@ -8,28 +8,46 @@ import { ChildrenOutletContexts } from "@angular/router";
     animations: [
         trigger('routeAnimations', [
             state('showRoute', style({
-                height: '*',
-                opacity: '1'
+                height: '8rem',
               })),
               state('showModule', style({
-                height: '4rem',
-                overflow: 'hidden',
-                opacity: '0',
-                backgroundColor: 'none'
+                height: '5rem',
+                overflow: 'hidden'
               })),
-              transition('* <=> *', [
-                animate('.3s ease')
+              transition('showRoute => showModule', [
+                group([
+                  query('@*', animateChild()),
+                  animate('.3s ease')
+                ])
+              ]),
+              transition('showModule => showRoute', [
+                group([
+                  query('@*', animateChild()),
+                  animate('.3s ease')
+                ])
               ])
-      ])
+      ]),
+      trigger('sliderAnimations', [
+        transition(':enter', [
+          style({ opacity: 0 }),
+          animate('.3s ease', style({ opacity: 1 }))
+        ])
+      ]),
+      trigger('moduleAnimations', [
+        transition(':enter', [
+          style({ opacity: 0 }),
+          animate('.3s ease', style({ opacity: 1 }))
+        ])
+      ]),
     ]
 })
 export class ContentContainerComponent {
     constructor(
-        private contexts: ChildrenOutletContexts
+        private contexts: ChildrenOutletContexts,
+        public router: Router
     ) {}
 
     public getRouteAnimationData() {
-        console.log(this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'])
         return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
     }
 }
