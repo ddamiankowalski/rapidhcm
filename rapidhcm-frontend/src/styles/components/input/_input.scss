@@ -1,8 +1,20 @@
 @use '../../base/var' as global;
 
+.input-container {
+    min-width: 8rem;
+}
+
+.field-container {
+    &.row {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+}
+
 .std-input {
-    transition: box-shadow .1s ease;
-    border-color: global.$deep-grey;
+    transition: box-shadow .3s ease;
+    border-color: global.$light-grey;
     width: inherit;
     border-radius: .3rem;
     border-style: solid;
@@ -10,6 +22,17 @@
     height: 1.7rem;
     font-size: .5rem;
     padding: 0 .8rem;
+
+    &:focus ~.std-input__label.component {
+        transition: all .3s;
+        transform: translateY(-.55rem);
+        background-color: rgba($color: #000000, $alpha: 0);
+        color: global.$action-blue;
+    }
+
+    &.login {
+        border-color: global.$deep-grey;
+    }
 
     &:disabled {
         transition: all .5s ease;
@@ -27,7 +50,7 @@
         padding: 0 .2rem;
         background-color: white;
         font-weight: 500;
-        color: global.$dark-background;
+        color: global.$deep-grey;
 
         &.disabled {
             transition: transform .3s ease;

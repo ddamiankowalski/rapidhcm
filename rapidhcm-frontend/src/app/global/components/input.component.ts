@@ -16,7 +16,7 @@ export class InputComponent {
     /**
      * autocomplete input
      */
-    @Input() public autocomplete?: string;
+    @Input() public autocomplete?: string = 'false';
 
     /**
      * input type text by default
