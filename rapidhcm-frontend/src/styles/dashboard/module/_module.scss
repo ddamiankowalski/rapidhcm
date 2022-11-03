@@ -9,12 +9,6 @@
         flex-direction: column;
     }
 
-    & .field_container {
-        margin-top: .4rem;
-        flex-grow: 1;
-        width: 100%;
-    }
-
     & .header {
         display: flex;
 
@@ -50,4 +44,27 @@
             }
         }
     }
+
+    & .field-table_container {
+        display: flex;
+
+        & .field_container {
+            margin-top: .4rem;
+            flex-grow: 1;
+            flex-basis: 40%;
+            width: 100%;
+        }
+
+        & .table_container {
+            flex-basis: 60%;
+            flex-grow: 1;
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.actionset {
+    margin-top: 1.8rem;
+    display: flex;
 }

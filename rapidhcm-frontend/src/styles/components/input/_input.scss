@@ -1,14 +1,16 @@
 @use '../../base/var' as global;
 
 .input-container {
-    min-width: 8rem;
+    min-width: 7rem;
+    max-width: 9rem;
+    flex-grow: 1;
 }
 
 .field-container {
     &.row {
         display: flex;
-        gap: 1rem;
-        margin-top: 1.1rem;
+        gap: 1.1rem;
+        margin-top: 1.3rem;
     }
 }
 

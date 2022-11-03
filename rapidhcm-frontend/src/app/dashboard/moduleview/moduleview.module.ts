@@ -5,6 +5,7 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { GlobalModule } from "src/app/global/global.module";
 import { ModuleContainerComponent } from "./components/modulecontainer.component";
 import { ModuleFieldContainerComponent } from "./components/modulefieldcontainer.component";
+import { ModuleTableContainer } from "./components/moduletablecontainer.component";
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { ModuleFieldContainerComponent } from "./components/modulefieldcontainer
     ],
     declarations: [
         ModuleContainerComponent,
-        ModuleFieldContainerComponent
+        ModuleFieldContainerComponent,
+        ModuleTableContainer
     ]
 })
 export class ModuleViewModule {

@@ -14,6 +14,8 @@ export class ButtonComponent {
 
     @Input() public outlined: boolean = false;
 
+    @Input() public typeText: boolean = false;
+
     @Input() public fullWidth: boolean = false;
 
     @Input() public auxIcon?: IconDefinition;

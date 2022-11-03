@@ -1,4 +1,4 @@
-<button class="std-btn" [disabled]="disabled" [ngClass]="{'button-loading': loading, 'btn__full-width': fullWidth, 'btn__outlined': outlined }" (onclick)="click.emit($event)">
+<button class="std-btn" [disabled]="disabled" [ngClass]="{'button-loading': loading, 'type-text': typeText ,'btn__full-width': fullWidth, 'btn__outlined': outlined }" (onclick)="click.emit($event)">
     <fa-icon class="aux__icon" *ngIf="auxIcon" [icon]="auxIcon"></fa-icon>
     {{ loading ? '' : text }}
     <div class="spinner">

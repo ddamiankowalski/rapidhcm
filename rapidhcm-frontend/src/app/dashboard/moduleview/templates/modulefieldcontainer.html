@@ -1,6 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 <div class="field-container row">
     <div class="input-container">
-        <system-input [label]="'First Name'" [placeholder]="'Enter your name'"></system-input>
+        <system-input [form]="form" [label]="'First Name'" [placeholder]="'Enter your name'"></system-input>
     </div>
     <div class="input-container">
         <system-input [label]="'Last Name'" [placeholder]="'Enter your last name'"></system-input>
@@ -14,3 +15,18 @@
         <system-input [label]="'Email'" [placeholder]="'Enter your email'"></system-input>
     </div>
 </div>
+<div class="field-container row">
+    <div class="input-container">
+        <system-input [label]="'Tax Number'" [placeholder]="'Enter your tax'"></system-input>
+    </div>
+    <div class="input-container">
+        <system-input [label]="'Assigned to'" [placeholder]="'Choose user'"></system-input>
+    </div>
+</div>
+<div class="actionset">
+    <system-button text="Save" [disabled]="true"></system-button>
+    <system-button [typeText]="true" text="Cancel editing"></system-button>
+</div>
+</form>
+
+{{ form.value | json }}
