@@ -7,8 +7,6 @@ import { UtilsService } from "../services/utils.service";
 export class DownToBottomDirective implements AfterViewInit{
     @HostListener('window:resize', ['$event'])
 
-    @Input() public marginDiff: number = 0;
-
 	public onResize(event?: any) {
         this.resizeToBottom();
 	}
@@ -27,6 +25,6 @@ export class DownToBottomDirective implements AfterViewInit{
     }
 
     public resizeToBottom(value: number = window.innerHeight) {
-        if(this.dashboardWrapper.style) this.dashboardWrapper.style.height = value - this.utils.convertRemToPixels(this.marginDiff) + 'px';
+        if(this.dashboardWrapper.style) this.dashboardWrapper.style.height = value + 'px';
     }
 }

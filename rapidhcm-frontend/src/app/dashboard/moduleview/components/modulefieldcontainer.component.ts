@@ -9,7 +9,7 @@ export class ModuleFieldContainerComponent implements OnInit {
     constructor () {}
 
     ngOnInit(): void {
-        this.form = new FormGroup({}, { updateOn: 'blur' });
+        this.form = new FormGroup({}, { updateOn: 'change' });
     }
 
     public form!: FormGroup;
