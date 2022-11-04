@@ -1,0 +1,38 @@
+@use '../../base/var' as global;
+
+table {
+    table-layout: auto;
+    font-size: .5rem;
+    // border-radius: .3rem;
+    // border: .05rem solid global.$border-grey;
+    border-spacing: 0;
+  }
+
+th, td {
+    border-bottom: 1px solid global.$border-grey;
+    padding: .75rem 1rem;
+    border-right: none;
+    border-left: none;
+}
+
+tr:nth-child(even) {
+    background-color: global.$grey-background;
+}
+
+tr {
+    font-weight: 300;
+}
+
+th {
+    color: global.$dark-background;
+    font-weight: 500;
+}
+
+th:last-child, td:last-child  {
+    border-right: none;
+    border-left: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
