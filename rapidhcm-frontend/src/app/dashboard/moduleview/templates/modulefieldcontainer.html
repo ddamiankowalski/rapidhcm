@@ -1,32 +1,30 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 <div class="field-container row">
     <div class="input-container">
-        <system-input [form]="form" [label]="'First Name'" [placeholder]="'Enter your name'"></system-input>
+        <system-input fieldname="firstName" [form]="form" [label]="'First Name'" [placeholder]="'Enter your name'"></system-input>
     </div>
     <div class="input-container">
-        <system-input [label]="'Last Name'" [placeholder]="'Enter your last name'"></system-input>
-    </div>
-</div>
-<div class="field-container row">
-    <div class="input-container">
-        <system-input [label]="'Address'" [placeholder]="'Enter your address'"></system-input>
-    </div>
-    <div class="input-container">
-        <system-input [label]="'Email'" [placeholder]="'Enter your email'"></system-input>
+        <system-input fieldname="lastName" [form]="form" [label]="'Last Name'" [placeholder]="'Enter your last name'"></system-input>
     </div>
 </div>
 <div class="field-container row">
     <div class="input-container">
-        <system-input [label]="'Tax Number'" [placeholder]="'Enter your tax'"></system-input>
+        <system-input fieldname="Address" [form]="form" [label]="'Address'" [placeholder]="'Enter your address'"></system-input>
     </div>
     <div class="input-container">
-        <system-input [label]="'Assigned to'" [placeholder]="'Choose user'"></system-input>
+        <system-input fieldname="Email" [form]="form" [label]="'Email'" [placeholder]="'Enter your email'"></system-input>
+    </div>
+</div>
+<div class="field-container row">
+    <div class="input-container">
+        <system-input fieldname="tax" [form]="form" [label]="'Tax Number'" [placeholder]="'Enter your tax'"></system-input>
+    </div>
+    <div class="input-container">
+        <system-input fieldname="assigned" [form]="form" [label]="'Assigned to'" [placeholder]="'Choose user'"></system-input>
     </div>
 </div>
 <div class="actionset">
-    <system-button text="Save" [disabled]="true"></system-button>
+    <system-button text="Save" [disabled]="!form.valid"></system-button>
     <system-button [typeText]="true" text="Cancel editing"></system-button>
 </div>
 </form>
-
-{{ form.value | json }}

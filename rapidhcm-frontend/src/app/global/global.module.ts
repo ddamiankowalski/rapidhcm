@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { AlertComponent } from "./components/alert.component";
 import { AvatarComponent } from "./components/avatar.component";
@@ -18,7 +19,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
 @NgModule({
     imports: [
         FontAwesomeModule,
-        CommonModule
+        CommonModule,
+        ReactiveFormsModule
     ],
     declarations: [
         CardComponent,

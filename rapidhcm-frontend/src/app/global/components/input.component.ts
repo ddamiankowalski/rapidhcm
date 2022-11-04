@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { EmailValidator, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faCircleExclamation, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector: 'system-input',
@@ -11,12 +11,32 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 export class InputComponent implements OnInit {
     
     ngOnInit(): void {
-        this.form?.addControl('firstName', new FormControl('tetsa'));
-        console.log(this.form)
-        this.form?.setValue({ 'firstName': 'dadasdad' })
+        this.form.addControl(this.fieldname, this.fb.control('', { validators: [Validators.required] }));
+        console.log(this.form.valid)
+        this.form.get(this.fieldname)?.valueChanges.subscribe((status: any) => this.handleStatus(status))
     }
 
-    @Input() public form: FormGroup | undefined;
+    public handleBlur() {
+        if(!this.form.get(this.fieldname)?.valid) {
+            console.log(this.form.get(this.fieldname)?.errors);
+            this.hasError = true;
+            this.helpMessage = 'This field is required'
+        }
+
+    }
+
+    public hasError: boolean = false;
+
+    public handleStatus(value: any) {
+        console.log('dasda')
+        if((this.form.controls[this.fieldname].status === 'INVALID' && this.form.controls[this.fieldname].touched)) {
+            this.hasError = true;
+        } else {
+            this.hasError = false;
+        }
+    }
+
+    @Input() public form!: FormGroup;
 
     /**
      * placeholder input
@@ -51,14 +71,14 @@ export class InputComponent implements OnInit {
     /**
      * Icon input
      */
-    @Input() public icon!: IconProp;
+    @Input() public icon: IconProp = faCircleExclamation;
 
     /**
      * Additional class
      */
     @Input() public addclass?: string;
 
-    @Input() public id?: string;
+    @Input() public fieldname: string = '';
 
     @Input() public eyeIcon?: boolean;
 
@@ -66,9 +86,8 @@ export class InputComponent implements OnInit {
     public faEyeSlash: IconDefinition = faEyeSlash;
 
     public togglePasswordVisibility() {
-        if(this.type == 'password') this.type = 'text';
-        else this.type = 'password';
+        this.type = this.type === 'password' ? 'text' : 'password';
     }
 
-    constructor() {}
+    constructor(public fb: FormBuilder) {}
 }

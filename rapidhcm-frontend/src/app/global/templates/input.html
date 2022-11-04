@@ -1,7 +1,7 @@
-<div class="std-input__w-label" [ngClass]="addclass">
-    <input formControlName="firstName" [type]="type" [id]="id" class="std-input" [autocomplete]="autocomplete" [placeholder]="placeholder">
-    <label [for]="id" class="std-input__label component">{{ label }}</label>
-    <!-- <fa-icon [icon]="icon" class="std-input__icon"></fa-icon>
-    <fa-icon (click)="togglePasswordVisibility()" *ngIf="eyeIcon" [icon]="type !== 'password' ? faEye : faEyeSlash" class="std-input__icon-toggle"></fa-icon> -->
-    <div class="std-input__help">{{ helpMessage }}</div>
+<div [formGroup]="form" class="std-input__w-label">
+    <input (blur)="handleBlur()" [formControlName]="fieldname" [ngClass]="{'has_error': hasError}" [type]="type" [id]="fieldname" class="std-input" [autocomplete]="autocomplete" [placeholder]="placeholder">
+    <label [for]="fieldname" class="std-input__label component" [ngClass]="{'has_error': hasError}">{{ label }}</label>
+    <fa-icon [icon]="icon" [ngClass]="hasError ? 'std-input__icon-has-error' : 'std-input__icon'"></fa-icon>
+    <!-- <fa-icon (click)="togglePasswordVisibility()" *ngIf="eyeIcon" [icon]="type !== 'password' ? faEye : faEyeSlash" class="std-input__icon-toggle"></fa-icon> -->
+    <div class="std-input__help" [ngClass]="{'has_error': hasError}">{{ helpMessage }}</div>
 </div>
