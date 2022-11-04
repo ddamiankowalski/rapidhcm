@@ -1,20 +1,31 @@
 <div class="std-module container">
-    <div class="header">
-        <div class="module-icon">
-            <fa-icon [icon]="faUserFriends"></fa-icon>
-        </div>
-        <div class="header-text">
-            {{ header }}
-            <span class="sub-header">
-                {{ subHeader }}
-            </span>
-        </div>
-    </div>
     <div class="field-table_container">
         <div class="std-module field_container">
+            <div class="header">
+                <div class="module-icon">
+                    <fa-icon [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div class="header-text">
+                    {{ header }}
+                    <span class="sub-header">
+                        {{ subHeader }}
+                    </span>
+                </div>
+            </div>
             <module-field-container></module-field-container>
         </div>
         <div class="std-module table_container">
+            <div class="header">
+                <div class="module-icon">
+                    <fa-icon [icon]="faUserFriends"></fa-icon>
+                </div>
+                <div class="header-text">
+                    {{ headerTable }}
+                    <span class="sub-header">
+                        {{ subHeaderTable }}
+                    </span>
+                </div>
+            </div>
             <module-table-container></module-table-container>
         </div>
     </div>

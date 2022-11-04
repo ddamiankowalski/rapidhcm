@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { faPlusCircle, faUserFriends, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector: 'module-container',
@@ -12,4 +12,8 @@ export class ModuleContainerComponent {
     public header: string | undefined = 'New Candidate';
     public subHeader: string | undefined = 'Create a new candidate by filling out the form below';
     public faUserFriends: IconDefinition = faUserFriends;
+
+    public headerTable: string | undefined = 'All Candidates';
+    public subHeaderTable: string | undefined = 'Browse all candidates in the table that is below';
+    public faPlusCircle: IconDefinition = faUserPlus;
 }
