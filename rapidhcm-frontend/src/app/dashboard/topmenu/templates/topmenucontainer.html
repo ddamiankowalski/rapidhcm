@@ -19,10 +19,10 @@
         <div class="dashboard__right-menu">
             <system-button text="Messages" [outlined]="true" [auxIcon]="faMessage"></system-button>
             <system-button text="Settings" [outlined]="true" [auxIcon]="faCogs"></system-button>
-            <system-button text="Logout" class="m-right_large" [outlined]="true" [auxIcon]="faDoorOpen"></system-button>
+            <system-button (click)="logout()" text="Logout" class="m-right_large" [outlined]="true" [auxIcon]="faDoorOpen"></system-button>
             <div class="std-line__vertical"></div>
             <div class="dashboard__avatar">
-                Welcome,<span class="dashboard__username">Damian</span>
+                Welcome,<span class="dashboard__username">{{ auth.username }}</span>
                 <system-avatar></system-avatar>
             </div>
         </div>

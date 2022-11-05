@@ -18,7 +18,6 @@ export class InputComponent implements OnInit {
 
     public handleBlur() {
         if(!this.form.get(this.fieldname)?.valid) {
-            console.log(this.form.get(this.fieldname)?.errors);
             this.hasError = true;
             this.helpMessage = 'This field is required'
         }
@@ -28,7 +27,6 @@ export class InputComponent implements OnInit {
     public hasError: boolean = false;
 
     public handleStatus(value: any) {
-        console.log('dasda')
         if((this.form.controls[this.fieldname].status === 'INVALID' && this.form.controls[this.fieldname].touched)) {
             this.hasError = true;
         } else {

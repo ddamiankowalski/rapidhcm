@@ -24,21 +24,28 @@ export class BackendService {
 
         this.http.get(this.backend + path, { headers: headers, params: params }).subscribe(
             {
-                next: res => console.log(res),
-                error: err => console.log(err),
-                complete() {
-                    get$.next(true);
-                }
+                next: res => get$.next(res),
+                error: err => console.log(err)
             }
         )
 
-        return get$;
+        return get$.asObservable();
     }
 
-    public postRequest(path: string): Observable<any> {
+    public postRequest(path: string, body: any | undefined): Observable<any> {
         let post$ = new Subject();
 
-        //this.http.post();
+        const headers = this.getHeaders();
+
+        this.http.post(this.backend + path, body ?? {}, { headers: headers }).subscribe(
+            {
+                next: res => console.log(res),
+                error: err => console.log(err),
+                complete() {
+                    post$.next(true);
+                }
+            }
+        )
 
         return post$;
     }
@@ -73,11 +80,11 @@ export class BackendService {
         const decodedToken = this.auth.getDecodedToken(token);
         
         if(!decodedToken) this.router.navigate(['/', 'auth']);
+        this.getRequest('getuserinfo').subscribe(userInfo => this.handleUserInfo(userInfo))
+    }
 
-        setTimeout(() => {
-            this.configuration.isConfigured$.next(true);
-        }, 3000)
-        
-        this.getRequest('getuserinfo').subscribe(x => console.log(x))
+    public handleUserInfo(userInfo: any) {
+        this.auth.setUserInfo(userInfo);
+        this.configuration.isConfigured$.next(true);
     }
 }

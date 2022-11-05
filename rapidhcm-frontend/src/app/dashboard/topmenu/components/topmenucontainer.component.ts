@@ -1,7 +1,9 @@
 import { Component, HostListener } from "@angular/core";
+import { Router } from "@angular/router";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faMagento } from "@fortawesome/free-brands-svg-icons";
 import { faAnchorLock, faBell, faCalendarAlt, faCogs, faDoorOpen, faHaykal, faInfoCircle, faMessage, faSackXmark, faSearch, faTimes, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { AuthenticationService } from "src/app/authentication/services/authentication.service";
 
 @Component({
     selector: 'dashboard-top-menu-container',
@@ -12,12 +14,28 @@ export class TopMenuContainerComponent {
         if (event.key === "Escape") this.cancelSearchInput();
     }
     
-    constructor() {}
+    constructor(
+        public auth: AuthenticationService,
+        public router: Router
+    ) {}
+
+    /**
+     * A getter for the username that gets set when
+     * user is being logged in
+     */
+    public getUsername() {
+        return this.auth.username;
+    }
 
     public searchInput: string = '';
 
     public cancelSearchInput() {
         this.searchInput = '';
+    }
+
+    public logout() {
+        this.auth.clearSession();
+        this.router.navigate(['/auth']);
     }
 
     get canCancelInput(): boolean {

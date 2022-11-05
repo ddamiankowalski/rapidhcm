@@ -11,8 +11,23 @@ export class AuthenticationService {
         public configuration: ConfigurationService
     ) {}
 
+    private _username?: string;
+
+    get username(): string | undefined {
+        return this._username;
+    }
+
+    set username(username: string | undefined) {
+        this._username = username;
+    }
+
     public getToken(): any {
         return localStorage.getItem('rapid_token');
+    }
+
+    public setUserInfo(userInfo: any) {
+        console.log(userInfo)
+        this.username = userInfo.firstName;
     }
 
     public getDecodedToken(token: string): any {
@@ -34,5 +49,6 @@ export class AuthenticationService {
 
     public clearSession() {
         localStorage.removeItem('rapid_token');
+        this.username = '';
     }
 }

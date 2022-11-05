@@ -59,7 +59,6 @@ export class LoginComponent {
 
     public handleLogin(res: any): void {
         this.isLoading = false;
-        console.log(res, 'RESPONSE HEHE')
         localStorage.setItem('rapid_token', res.access_token);
         this.router.navigate(['/', 'dashboard']);
     }

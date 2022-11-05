@@ -19,7 +19,9 @@ export class CandidateService {
     }
 
     async create(candidate: any): Promise<any> {
-        if(candidate.userId !== null) {
+        console.log(candidate.userId)
+        if(candidate.userId !== undefined) {
+            console.log('jestem')
             const user = await this.userRepository.findBy({ id: candidate.userId });
             candidate.user = user[0];
         }

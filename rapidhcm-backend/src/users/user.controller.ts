@@ -11,6 +11,6 @@ export class UserController {
     @Get('getuserinfo')
     @UseFilters(new QueryExceptionFilter())
     async getUserInfo(@Request() req) {
-        return this.usersService.findOne(req.user);
+        return this.usersService.findOne(req.user.username);
     }
 }

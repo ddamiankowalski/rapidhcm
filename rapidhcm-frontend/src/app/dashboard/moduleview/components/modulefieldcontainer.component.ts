@@ -1,12 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { ModuleModelService } from "../services/modulemodel.service";
 
 @Component({
     selector: 'module-field-container',
     templateUrl: '../templates/modulefieldcontainer.html'
 })
 export class ModuleFieldContainerComponent implements OnInit {
-    constructor () {}
+    constructor (
+        public model: ModuleModelService
+    ) {}
 
     ngOnInit(): void {
         this.form = new FormGroup({}, { updateOn: 'change' });
@@ -15,6 +18,6 @@ export class ModuleFieldContainerComponent implements OnInit {
     public form!: FormGroup;
 
     public onSubmit() {
-        console.log('submitted')
+        this.model.saveModel(this.form.value);
     }
 }
