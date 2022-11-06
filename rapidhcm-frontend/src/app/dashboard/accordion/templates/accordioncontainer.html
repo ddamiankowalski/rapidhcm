@@ -9,7 +9,7 @@
                     <span class="line"></span>
                 </div>
             </div>
-            <div class="accordion__message" [ngClass]="{'hidden': isAccordionToggled}">Shared Calendars</div>
+            <div  class="accordion__message" [ngClass]="{'hidden': isAccordionToggled}">Your {{ accordion.accordionItemClicked$ | async }}</div>
             <div class="accordion__icon" [ngClass]="{'hidden': isAccordionToggled}">
                 <fa-icon [icon]="faBell"></fa-icon>
                 <div class="icon-notification">5</div>

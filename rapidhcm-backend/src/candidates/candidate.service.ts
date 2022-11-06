@@ -4,6 +4,11 @@ import { User } from "src/users/entity/user.entity";
 import { Repository } from "typeorm";
 import { Candidate } from "./entity/candidate.entity";
 
+interface metadata {
+    fieldname: string,
+    required: boolean
+}
+
 @Injectable()
 export class CandidateService {
     constructor(
@@ -16,6 +21,22 @@ export class CandidateService {
 
     async getAll(): Promise<Candidate[] | undefined> {
         return this.candidateRepository.find();
+    }
+
+    async metadata(): Promise<any> | undefined {
+        let result: Array<metadata> = [];
+
+        const metadata = this.candidateRepository.manager.connection.getMetadata(Candidate);
+        const columns = metadata.columns.map((column) => {
+            if (!column.relationMetadata && !column.isPrimary) {
+                const metadataObj: metadata = {
+                    fieldname: column.propertyName,
+                    required: !column.isNullable && !column.default
+                }
+                result.push(metadataObj)
+            }
+        });
+        return result;
     }
 
     async create(candidate: any): Promise<any> {

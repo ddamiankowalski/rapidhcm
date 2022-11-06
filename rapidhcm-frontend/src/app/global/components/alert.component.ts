@@ -16,10 +16,14 @@ export class AlertComponent implements AfterViewInit {
     @Input() public alertDescription?: string;
     @Input() public alertMessageType?: string;
     @Input() public self!: ComponentRef<AlertComponent>;
+    @Input() public autoclose: boolean = true;
 
     ngAfterViewInit(): void {
         this.alertContainer.style.animation = 'alertIn 0.5s';
         setTimeout(() => this.alertContainer.style.removeProperty('animation'), 500);
+        if(this.autoclose) {
+            setTimeout(() => this.close(), 2500)
+        }
     }
 
     public close(): void {

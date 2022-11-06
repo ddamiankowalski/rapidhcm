@@ -1,4 +1,4 @@
-import { Controller, Get, UseFilters, UseGuards, Request, Post, Param, Delete, Query } from "@nestjs/common";
+import { Controller, Get, UseFilters, UseGuards, Request, Post, Query } from "@nestjs/common";
 import { JwtAuthGuard } from "src/auth/jwt-auth.guard";
 import { QueryExceptionFilter } from "src/filters/query-exception.filter";
 import { CandidateService } from "./candidate.service";
@@ -26,5 +26,12 @@ export class CandidateController {
     @UseFilters(new QueryExceptionFilter())
     async deleteCandidate(@Query('id') id: string) {
         return this.candidateService.delete(id);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Post('candidate/metadata')
+    @UseFilters(new QueryExceptionFilter())
+    async getMetadata() {
+        return this.candidateService.metadata();
     }
 }

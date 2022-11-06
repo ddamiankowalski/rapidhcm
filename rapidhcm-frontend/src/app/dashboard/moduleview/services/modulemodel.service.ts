@@ -32,4 +32,17 @@ export class ModuleModelService {
 
         return this.modelSaved$.asObservable();
     }
+
+    /**
+     * A simple function that returns information about fields
+     * @param moduleName name of the module
+     */
+    public getMetadata(moduleName: string) {
+        this.backend.postRequest('candidate/metadata', null).subscribe(
+            {
+                next: data => console.log(data),
+                error: err => console.log(err)
+            }
+        )
+    }
 }   
