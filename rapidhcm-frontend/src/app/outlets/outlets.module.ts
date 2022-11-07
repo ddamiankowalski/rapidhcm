@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AlertOutlet } from "./components/alertoutlet";
 
@@ -8,7 +9,9 @@ import { AlertOutlet } from "./components/alertoutlet";
     declarations: [
         AlertOutlet
     ],
-    imports: [],
+    imports: [
+        CommonModule
+    ],
     exports: [
         AlertOutlet
     ]

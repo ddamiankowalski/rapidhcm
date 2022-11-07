@@ -15,7 +15,7 @@ export class ModuleFieldContainerComponent implements OnInit {
 
     ngOnInit(): void {
         this.form = new FormGroup({}, { updateOn: 'change' });
-        this.model.getMetadata('candidate')
+        this.model.getMetadata('candidate').subscribe(metadata => console.log(metadata))
     }
 
     public form!: FormGroup;
@@ -23,5 +23,6 @@ export class ModuleFieldContainerComponent implements OnInit {
     public onSubmit() {
         this.model.saveModel(this.form.value);
         this.alert.createAlert('Success', 'Sucessfully added a new candidate', 'success');
+        this.form.reset();
     }
 }

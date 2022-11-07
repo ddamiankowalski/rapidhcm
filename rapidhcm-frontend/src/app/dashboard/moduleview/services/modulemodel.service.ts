@@ -37,12 +37,15 @@ export class ModuleModelService {
      * A simple function that returns information about fields
      * @param moduleName name of the module
      */
-    public getMetadata(moduleName: string) {
+    public getMetadata(moduleName: string): Observable<any> {
+        let result: Subject<any> = new Subject();
         this.backend.postRequest('candidate/metadata', null).subscribe(
             {
-                next: data => console.log(data),
+                next: data => result.next(data),
                 error: err => console.log(err)
             }
         )
+
+        return result.asObservable();
     }
 }   

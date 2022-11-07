@@ -26,6 +26,5 @@ export class AccordionService {
         this.accordionItemClicked$.next(tabName);
         let target = tabName === 'News' ? 'news' : 'module';
         this.router.navigateByUrl('/dashboard/' + target);
-        console.log(this.route)
     }
 }

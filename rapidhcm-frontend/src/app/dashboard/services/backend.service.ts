@@ -39,11 +39,8 @@ export class BackendService {
 
         this.http.post(this.backend + path, body ?? {}, { headers: headers }).subscribe(
             {
-                next: res => console.log(res),
-                error: err => console.log(err),
-                complete() {
-                    post$.next(true);
-                }
+                next: res => post$.next(res),
+                error: err => console.log(err)
             }
         )
 

@@ -12,7 +12,6 @@ export class InputComponent implements OnInit {
     
     ngOnInit(): void {
         this.form.addControl(this.fieldname, this.fb.control('', { validators: [Validators.required] }));
-        console.log(this.form.valid)
         this.form.get(this.fieldname)?.valueChanges.subscribe((status: any) => this.handleStatus(status))
     }
 

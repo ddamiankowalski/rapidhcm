@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ComponentRef, Input } from "@angular/core";
+import { AfterViewInit, Component, ComponentRef, HostListener, Input } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { AlertService } from "../services/alert.service";
@@ -8,9 +8,21 @@ import { AlertService } from "../services/alert.service";
     templateUrl: '../templates/alert.html'
 })
 export class AlertComponent implements AfterViewInit {
+    @HostListener('mouseover', ['$event']) public hostHover() {
+        if(this.closeTimeout !== undefined) {
+            clearTimeout(this.closeTimeout);
+        }
+    }
+
+    @HostListener('mouseout', ['$event']) public hostOut() {
+        this.closeTimeout = setTimeout(() => this.close(), 2500)
+    }
+
     constructor (
         public alert: AlertService,
     ) {}
+
+    public closeTimeout: any | undefined;
 
     @Input() public alertHeader?: string;
     @Input() public alertDescription?: string;
@@ -22,7 +34,14 @@ export class AlertComponent implements AfterViewInit {
         this.alertContainer.style.animation = 'alertIn 0.5s';
         setTimeout(() => this.alertContainer.style.removeProperty('animation'), 500);
         if(this.autoclose) {
-            setTimeout(() => this.close(), 2500)
+            this.closeTimeout = setTimeout(() => this.close(), 2500)
+        }
+    }
+
+    public resetCloseTimeout() {
+        if(this.closeTimeout !== undefined) {
+            clearTimeout(this.closeTimeout);
+            this.closeTimeout = setTimeout(() => this.close(), 2500)
         }
     }
 

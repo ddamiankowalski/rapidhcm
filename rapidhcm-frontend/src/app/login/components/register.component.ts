@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
     public isLoading: boolean = false;
 
     public handleClick(event: any) {
-        console.log(event);
         this.isLoading = true;
     }
 

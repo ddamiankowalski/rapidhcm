@@ -26,7 +26,6 @@ export class AuthenticationService {
     }
 
     public setUserInfo(userInfo: any) {
-        console.log(userInfo)
         this.username = userInfo.firstName;
     }
 

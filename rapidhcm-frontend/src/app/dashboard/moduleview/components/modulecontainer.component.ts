@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faPlusCircle, faUserFriends, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUserFriends, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
     selector: 'module-container',
