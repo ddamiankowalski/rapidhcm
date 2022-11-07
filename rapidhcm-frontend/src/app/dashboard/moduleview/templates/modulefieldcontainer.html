@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form #formContainer [formGroup]="form" (ngSubmit)="onSubmit()">
 <div class="field-container row">
     <div class="input-container">
         <system-input fieldname="firstName" [form]="form" [label]="'First Name'" [placeholder]="'Enter your name'"></system-input>

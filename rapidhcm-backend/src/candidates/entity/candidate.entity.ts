@@ -6,13 +6,13 @@ export class Candidate {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column()
+    @Column({ type: 'varchar' })
     firstName: string;
 
-    @Column()
+    @Column({ type: 'varchar' })
     lastName: string;
 
-    @Column({ default: true })
+    @Column({ default: true, update: false })
     isActive: boolean;
 
     @ManyToOne(() => User, (user) => user.candidate, { cascade: true })

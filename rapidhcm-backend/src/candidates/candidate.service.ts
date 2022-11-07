@@ -1,11 +1,12 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "src/users/entity/user.entity";
-import { Repository } from "typeorm";
+import { ColumnType, Repository } from "typeorm";
 import { Candidate } from "./entity/candidate.entity";
 
 interface metadata {
     fieldname: string,
+    fieldtype: ColumnType,
     required: boolean
 }
 
@@ -28,9 +29,11 @@ export class CandidateService {
 
         const metadata = this.candidateRepository.manager.connection.getMetadata(Candidate);
         const columns = metadata.columns.map((column) => {
-            if (!column.relationMetadata && !column.isPrimary) {
+            if (!column.relationMetadata && !column.isPrimary && column.isUpdate) {
+                console.log(column.type)
                 const metadataObj: metadata = {
                     fieldname: column.propertyName,
+                    fieldtype: column.type,
                     required: !column.isNullable && !column.default
                 }
                 result.push(metadataObj)
@@ -42,7 +45,6 @@ export class CandidateService {
     async create(candidate: any): Promise<any> {
         console.log(candidate.userId)
         if(candidate.userId !== undefined) {
-            console.log('jestem')
             const user = await this.userRepository.findBy({ id: candidate.userId });
             candidate.user = user[0];
         }
