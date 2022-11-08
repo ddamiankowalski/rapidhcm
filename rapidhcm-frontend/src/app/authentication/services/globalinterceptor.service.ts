@@ -21,10 +21,11 @@ export class GlobalInterceptor implements HttpInterceptor {
         })
         return next.handle(req).pipe(
             catchError((error: HttpErrorResponse) => {
-                this.showErrorMessage(error);
                 if(error.status == 401) {
                     this.auth.clearSession();
                     this.router.navigate(['auth']);
+                } else if(error.status === 500) {
+                    this.showErrorMessage(error);
                 }
                 return throwError(() => new Error(error.message));
             })
