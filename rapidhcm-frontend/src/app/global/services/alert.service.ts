@@ -39,10 +39,10 @@ export class AlertService {
      * @param description the description message
      * @param messageType the type of the message
      */
-    public createAlert(header: string = '', description: string = '', messageType: 'error' | 'success' = 'error') {
-        if(!this.checkForAlertsDuplicate(header, description)) return;
+    public createAlert(header: string = '', description: string = '', messageType: 'error' | 'success' = 'error', allowDuplicates: boolean = false) {
+        if(!allowDuplicates && !this.checkForAlertsDuplicate(header, description)) return;
 
-        const alert = this.vcr?.createComponent(AlertComponent);
+        const alert = this.vcr?.createComponent(AlertComponent, { index: 0 });
         this.alertsArray.push(alert);
         
         alert?.setInput('alertHeader', header);

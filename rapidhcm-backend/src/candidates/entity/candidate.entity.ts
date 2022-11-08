@@ -15,6 +15,18 @@ export class Candidate {
     @Column({ default: true, update: false })
     isActive: boolean;
 
+    @Column({ type: 'varchar' })
+    email: string;
+
+    @Column({ type: 'varchar' })
+    telephone: string;
+
+    @Column({ type: 'varchar' })
+    positionName: string;
+
+    @Column({ type: 'uuid' })
+    assignedTo: string;
+
     @ManyToOne(() => User, (user) => user.candidate, { cascade: true })
     user: User;
 

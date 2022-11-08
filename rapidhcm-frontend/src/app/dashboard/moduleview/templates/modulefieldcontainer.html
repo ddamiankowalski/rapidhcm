@@ -1,30 +1,9 @@
-<form #formContainer [formGroup]="form" (ngSubmit)="onSubmit()">
-<div class="field-container row">
-    <div class="input-container">
-        <system-input fieldname="firstName" [form]="form" [label]="'First Name'" [placeholder]="'Enter your name'"></system-input>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="field-container">
+        <ng-template #formContainer class=""></ng-template>
     </div>
-    <div class="input-container">
-        <system-input fieldname="lastName" [form]="form" [label]="'Last Name'" [placeholder]="'Enter your last name'"></system-input>
+    <div class="actionset">
+        <system-button text="Save" [disabled]="isFormInvalid$ | async"></system-button>
+        <system-button [typeText]="true" text="Cancel editing"></system-button>
     </div>
-</div>
-<div class="field-container row">
-    <div class="input-container">
-        <system-input fieldname="Address" [form]="form" [label]="'Address'" [placeholder]="'Enter your address'"></system-input>
-    </div>
-    <div class="input-container">
-        <system-input fieldname="Email" [form]="form" [label]="'Email'" [placeholder]="'Enter your email'"></system-input>
-    </div>
-</div>
-<div class="field-container row">
-    <div class="input-container">
-        <system-input fieldname="tax" [form]="form" [label]="'Tax Number'" [placeholder]="'Enter your tax'"></system-input>
-    </div>
-    <div class="input-container">
-        <system-input fieldname="assigned" [form]="form" [label]="'Assigned to'" [placeholder]="'Choose user'"></system-input>
-    </div>
-</div>
-<div class="actionset">
-    <system-button text="Save" [disabled]="!form.valid"></system-button>
-    <system-button [typeText]="true" text="Cancel editing"></system-button>
-</div>
 </form>

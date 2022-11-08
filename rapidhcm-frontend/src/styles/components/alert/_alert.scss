@@ -10,15 +10,15 @@
     &.dashboard {
       flex-direction: column;
       top: auto;
-      left: 0;
+      left: 8rem;
       bottom: 1rem;
     }
 }
 
 .std-alert__outlet.dashboard > alert-component {
-  margin: 1.5rem;
+  margin: .2rem;
   bottom: 100%;
-  position: absolute;
+  position: relative;
   display: block;
 }
 

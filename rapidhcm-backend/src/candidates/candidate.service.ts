@@ -30,7 +30,6 @@ export class CandidateService {
         const metadata = this.candidateRepository.manager.connection.getMetadata(Candidate);
         const columns = metadata.columns.map((column) => {
             if (!column.relationMetadata && !column.isPrimary && column.isUpdate) {
-                console.log(column.type)
                 const metadataObj: metadata = {
                     fieldname: column.propertyName,
                     fieldtype: column.type,
@@ -43,7 +42,6 @@ export class CandidateService {
     }
 
     async create(candidate: any): Promise<any> {
-        console.log(candidate.userId)
         if(candidate.userId !== undefined) {
             const user = await this.userRepository.findBy({ id: candidate.userId });
             candidate.user = user[0];

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, HostBinding, Input, OnInit } from "@angular/core";
 import { EmailValidator, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
@@ -8,10 +8,9 @@ import { faCircleExclamation, IconDefinition } from "@fortawesome/free-solid-svg
     selector: 'system-input',
     templateUrl: '../templates/input.html'
 })
-export class InputComponent implements OnInit {
-    
+export class InputComponent implements OnInit {    
     ngOnInit(): void {
-        this.form.addControl(this.fieldname, this.fb.control('', { validators: [Validators.required] }));
+        this.form.addControl(this.fieldname, this.fb.control({ value: this.value, disabled: this.isDisabled }, { validators: [Validators.required] }));
         this.form.get(this.fieldname)?.valueChanges.subscribe((status: any) => this.handleStatus(status))
     }
 
@@ -20,7 +19,6 @@ export class InputComponent implements OnInit {
             this.hasError = true;
             this.helpMessage = 'This field is required'
         }
-
     }
 
     public hasError: boolean = false;
@@ -32,6 +30,10 @@ export class InputComponent implements OnInit {
             this.hasError = false;
         }
     }
+
+    @Input() public value: any;
+
+    @Input() public isDisabled!: boolean;
 
     @Input() public form!: FormGroup;
 

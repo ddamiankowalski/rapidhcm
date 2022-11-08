@@ -1,17 +1,18 @@
 @use '../../base/var' as global;
 
-.input-container {
-    min-width: 7rem;
-    max-width: 9rem;
+system-input {
+    flex-shrink: 1;
     flex-grow: 1;
+    flex-basis: 40%;
+    min-width: 7rem;
+    margin-top: .4rem;
 }
 
 .field-container {
-    &.row {
-        display: flex;
-        gap: 1.1rem;
-        margin-top: 1.3rem;
-    }
+    display: flex;
+    gap: 1.1rem;
+    margin-top: 1.3rem;
+    flex-wrap: wrap;
 }
 
 .std-input {
@@ -45,6 +46,10 @@
         background-color: global.$grey-background;
         border-color: global.$disabled-grey;
         color: global.$deep-grey;
+    }
+
+    &:disabled ~.std-input__label.component {
+        transform: translateY(-.55rem);
     }
 
     &__label {
