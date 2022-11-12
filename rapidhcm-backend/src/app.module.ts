@@ -7,6 +7,8 @@ import { User } from './users/entity/user.entity';
 import { UsersModule } from './users/users.module';
 import { Candidate } from './candidates/entity/candidate.entity';
 import { CandidateModule } from './candidates/candidate.module';
+import { Dashlet } from './dashlets/entity/dashlet.entity';
+import { DashletModule } from './dashlets/dashlet.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
@@ -22,14 +24,16 @@ import { CandidateModule } from './candidates/candidate.module';
       database: 'rapidhcm',
       entities: [
         User,
-        Candidate
+        Candidate,
+        Dashlet
       ],
       synchronize: true,
       dropSchema: false
     }),
     AuthModule,
     UsersModule,
-    CandidateModule
+    CandidateModule,
+    DashletModule
   ],
   controllers: [],
   providers: [],
