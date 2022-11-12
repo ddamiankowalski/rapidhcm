@@ -8,10 +8,15 @@ import { InputComponent } from "src/app/global/components/input.component";
 export class FormBuilderService { 
     constructor() {}
 
+    private pages: number = 0;
+
+
+
     public buildFormFromMetadata(metadata: any, formContainer: ViewContainerRef, injector: Injector, form: FormGroup): void {
         metadata.forEach((fieldInfo: any) => {
             let referenceField = formContainer.createComponent(InputComponent, { injector: injector });
             this.setFieldMetadataInputs(referenceField, fieldInfo, injector, form);
+            // if(window.innerWidth > document.documentElement.clientWidth) referenceField.
         })
     }
 

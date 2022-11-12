@@ -1,12 +1,12 @@
 import { AfterViewInit, Directive, ElementRef, HostListener, Input } from "@angular/core";
+import { FormBuilderService } from "src/app/dashboard/moduleview/services/formbuilder.service";
 import { UtilsService } from "../services/utils.service";
 
 @Directive({
     selector: '[down-to-bottom]'
 })
-export class DownToBottomDirective implements AfterViewInit{
+export class DownToBottomDirective implements AfterViewInit {
     @HostListener('window:resize', ['$event'])
-
 	public onResize(event?: any) {
         this.resizeToBottom();
 	}
@@ -15,7 +15,8 @@ export class DownToBottomDirective implements AfterViewInit{
 
     constructor(
         public elementRef: ElementRef,
-        public utils: UtilsService
+        public utils: UtilsService,
+        public form: FormBuilderService
     ) {
         this.dashboardWrapper = elementRef.nativeElement as HTMLElement;
     }

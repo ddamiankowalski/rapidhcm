@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 import { GlobalCanLoad } from "../authentication/services/globalcanload.service";
 import { DashboardComponent } from "../dashboard/maindashboard/components/dashboard.component";
-import { NewsComponent } from "../dashboard/maindashboard/components/news.component";
+import { DashletsComponent } from "../dashboard/maindashboard/components/dashlets.component";
 import { ModuleContainerComponent } from "../dashboard/moduleview/components/modulecontainer.component";
 import { AuthPage } from "../login/components/authpage";
 import { LoginComponent } from "../login/components/login.component";
@@ -50,7 +50,7 @@ export const dashboardRoutes: Routes = [
             },
             {
                 path: '',
-                component: NewsComponent,
+                component: DashletsComponent,
                 data: { animation: 'showRoute' }
             },
         ]

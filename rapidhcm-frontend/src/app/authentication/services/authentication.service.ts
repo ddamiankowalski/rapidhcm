@@ -1,14 +1,12 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import jwt_decode from "jwt-decode";
-import { Observable, of } from "rxjs";
-import { ConfigurationService } from "src/app/dashboard/services/configuration.service";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class AuthenticationService {
     constructor(
-        public http: HttpClient,
-        public configuration: ConfigurationService
+        public http: HttpClient
     ) {}
 
     private _username?: string;

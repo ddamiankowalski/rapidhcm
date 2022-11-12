@@ -10,7 +10,7 @@ import { ContentModule } from "../content/content.module";
 import { ModuleViewModule } from "../moduleview/moduleview.module";
 import { TopMenuModule } from "../topmenu/topmenu.module";
 import { DashboardComponent } from "./components/dashboard.component";
-import { NewsComponent } from "./components/news.component";
+import { DashletsComponent } from "./components/dashlets.component";
 
 @NgModule({
     imports: [ 
@@ -24,7 +24,7 @@ import { NewsComponent } from "./components/news.component";
     ],
     declarations: [
         DashboardComponent,
-        NewsComponent
+        DashletsComponent
     ],
     exports: [
         DashboardComponent

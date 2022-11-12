@@ -69,6 +69,10 @@
         right: .7rem;
         top: .6rem;
 
+        &.favourite {
+            color: global.$error;
+        }
+
         &:hover {
             cursor: pointer;
             color: global.$error;

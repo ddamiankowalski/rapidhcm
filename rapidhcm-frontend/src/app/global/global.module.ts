@@ -7,6 +7,7 @@ import { AvatarComponent } from "./components/avatar.component";
 import { ButtonComponent } from "./components/button.component";
 import { CardComponent } from "./components/card.component";
 import { GlobalLoaderComponent } from "./components/globalloader.component";
+import { InfoCardComponent } from "./components/infocard.component";
 import { InputComponent } from "./components/input.component";
 import { InputCheckboxComponent } from "./components/inputcheckbox.component";
 import { ModuleOptionComponent } from "./components/moduleoption.component";
@@ -35,7 +36,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         TimeTrackerTaskComponent,
         TimeTrackerContainer,
         ModuleOptionsComponent,
-        ModuleOptionComponent
+        ModuleOptionComponent,
+        InfoCardComponent
     ],
     exports: [
         CardComponent,
@@ -50,7 +52,8 @@ import { DownToBottomDirective } from "./directives/downtobottom.directive";
         TimeTrackerTaskComponent,
         TimeTrackerContainer,
         ModuleOptionsComponent,
-        ModuleOptionComponent
+        ModuleOptionComponent,
+        InfoCardComponent
     ],
     providers: [
     ]

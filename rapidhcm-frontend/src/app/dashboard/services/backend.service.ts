@@ -4,13 +4,13 @@ import { Router } from "@angular/router";
 import { Observable, Subject } from "rxjs";
 import { AuthenticationService } from "src/app/authentication/services/authentication.service";
 import { ConfigurationService } from "./configuration.service";
+import { DashboardService } from "./dashboard.service";
 
 @Injectable({
     providedIn: 'root'
 })
 export class BackendService {
     constructor(
-        public configuration: ConfigurationService,
         public http: HttpClient,
         public auth: AuthenticationService,
         public router: Router
@@ -48,7 +48,7 @@ export class BackendService {
     }
 
     get backend(): string | undefined {
-        return this.configuration.backendUrl;
+        return 'http://localhost:3000/api/';
     }
 
     public getHeaders(): HttpHeaders {
@@ -64,24 +64,5 @@ export class BackendService {
             fromObject: paramList
         });
         return params;
-    }
-
-    /**
-     * A method that loads a 
-     * configuration for a given user
-     */
-    public loadConfiguration(): void {
-        this.configuration.isConfigured$.next(false);
-        
-        const token = this.auth.getToken();
-        const decodedToken = this.auth.getDecodedToken(token);
-        
-        if(!decodedToken) this.router.navigate(['/', 'auth']);
-        this.getRequest('getuserinfo').subscribe(userInfo => this.handleUserInfo(userInfo))
-    }
-
-    public handleUserInfo(userInfo: any) {
-        this.auth.setUserInfo(userInfo);
-        this.configuration.isConfigured$.next(true);
     }
 }

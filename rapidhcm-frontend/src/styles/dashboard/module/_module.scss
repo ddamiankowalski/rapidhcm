@@ -11,6 +11,11 @@
 
     & .header {
         display: flex;
+        position: sticky;
+        top: 0;
+        margin-bottom: 1rem;
+        background-color: global.$white-background;
+        z-index: 1;
 
         & .module-icon {
             display: flex;
@@ -45,15 +50,59 @@
         }
     }
 
+    & .field_container_n_header {
+        height: calc(100% - 5rem);
+        overflow-x: scroll;
+        padding-right: 1.5rem;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 100%;
+            background-color: global.$white-background;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 1rem;
+            background-color: global.$deep-grey;
+        
+            &:hover {
+                background-color: global.$matted-blue
+            }
+        }
+    }
+
     & .field-table_container {
         display: flex;
         gap: 3rem;
+        height: 100%;
 
         & .field_container {
+            padding-right: 1.5rem;
             margin-top: .4rem;
             flex-grow: 1;
             flex-basis: 35%;
             width: 100%;
+
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border-radius: 100%;
+                background-color: global.$white-background;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 1rem;
+                background-color: global.$deep-grey;
+            
+                &:hover {
+                    background-color: global.$matted-blue
+                }
+            }
         }
 
         & .table_container {

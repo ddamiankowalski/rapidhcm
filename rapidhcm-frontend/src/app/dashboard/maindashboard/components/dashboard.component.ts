@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit(): void {
-        this.backend.loadConfiguration();
+        this.configuration.loadConfiguration();
     }
 
     ngOnDestroy(): void {

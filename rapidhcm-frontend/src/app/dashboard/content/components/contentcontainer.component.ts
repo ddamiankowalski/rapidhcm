@@ -11,8 +11,7 @@ import { ChildrenOutletContexts, Router } from "@angular/router";
                 height: '8rem',
               })),
               state('showModule', style({
-                height: '5rem',
-                overflow: 'hidden'
+                height: '5rem'
               })),
               transition('showRoute => showModule', [
                 group([
