@@ -12,7 +12,7 @@ export class TimeTrackerContainer {
     @Input() id: string = ''; 
     @Input() isFavourite: boolean = false;
 
-    public _degValue: number = 75;
+    public _degValue: number = 0;
     public endValue: number = 75;
 
     public ngAfterViewInit(): void {
@@ -33,11 +33,11 @@ export class TimeTrackerContainer {
 
     public startDegValueSetting() {
         this._degValue == this.endValue
-        // setTimeout(() => {
-        //     if(this._degValue == this.endValue) return;
-        //     this._degValue++;
-        //     this.startDegValueSetting();
-        // }, 10);
+        setTimeout(() => {
+            if(this._degValue == this.endValue) return;
+            this._degValue++;
+            this.startDegValueSetting();
+        }, 10);
     }
 
     public faPencilRuler: IconDefinition = faPencilRuler;
