@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faCalendarPlus, faFileCircleQuestion, faPencilRuler } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,6 +8,9 @@ import { faCalendarPlus, faFileCircleQuestion, faPencilRuler } from "@fortawesom
 })
 export class TimeTrackerContainer {
     @ViewChild('progress') public progress: ElementRef | undefined;
+
+    @Input() id: string = ''; 
+    @Input() isFavourite: boolean = false;
 
     public _degValue: number = 75;
     public endValue: number = 75;

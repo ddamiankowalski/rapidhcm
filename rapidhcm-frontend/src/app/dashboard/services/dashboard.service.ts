@@ -35,7 +35,7 @@ export class DashboardService {
         let result$ = new Subject();
 
         const payload = { dashletId, isFavourite }
-console.log(isFavourite)
+        
         this.backend.postRequest('dashlet/addfavourite', payload).subscribe(
             {
                 next: res => result$.next(res),

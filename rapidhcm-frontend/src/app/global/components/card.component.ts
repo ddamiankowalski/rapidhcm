@@ -17,7 +17,7 @@ export class CardComponent {
     @Input() public isFavourite!: boolean;
 
     public faHeart: IconDefinition = faHeart;
-    public faHeartPlus: IconDefinition = faHeartCirclePlus;
+    public faHeartPlus: IconDefinition = faHeart;
 
     constructor(
         public alert: AlertService,
@@ -27,7 +27,8 @@ export class CardComponent {
 
     public addFavourite(): void {
         this.isFavourite = !this.isFavourite;
-        this.dashboard.addFavourite(this.dashletId, this.isFavourite);
-        this.alert.createAlert('Success', this.isFavourite ? 'Added to favourites' : 'Deleted from favourites', 'success', true);
+        this.dashboard.addFavourite(this.dashletId, this.isFavourite).subscribe(response => {
+            if(!response.error) this.alert.createAlert('Success', this.isFavourite ? 'Added to favourites' : 'Deleted from favourites', 'success', true);
+        })
     }
 }

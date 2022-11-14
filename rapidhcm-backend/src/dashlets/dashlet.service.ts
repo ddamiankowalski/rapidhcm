@@ -40,6 +40,7 @@ export class DashletService {
     }
 
     async setFavourite(isFavourite: any, dashletId: string) {
+        console.log(isFavourite, dashletId)
         return this.dashletRepository.save({ id: dashletId, isFavourite })
     }
 }

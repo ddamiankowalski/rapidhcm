@@ -53,8 +53,8 @@
 }
 
 .std-news__container > * {
-    grid-column: span 3;
-    grid-row: span 3;
+    // grid-column: span 3;
+    // grid-row: span 3; TODO, maybe we should set it to 1 / 1
 }
 
 .std-news_bottom {

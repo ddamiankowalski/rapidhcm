@@ -10,22 +10,21 @@
     &.dashboard {
       flex-direction: column;
       top: auto;
-      left: 5rem;
+      left: 0;
       bottom: 1rem;
     }
 }
 
 .std-alert__outlet.dashboard > alert-component {
-  margin: .2rem;
-  bottom: 100%;
   position: relative;
-  display: block;
+  transform: translateX(60%);
 }
 
 .std-alert {
     margin: .5rem;
     position: relative;
     display: block;
+    min-width: 10rem;
 
     @keyframes alertOut {
         to {
