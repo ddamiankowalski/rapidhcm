@@ -8,7 +8,7 @@ import { AuthenticationSharedModule } from './authentication/authenticationshare
 import { GlobalInterceptor } from './authentication/services/globalinterceptor.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthModule } from './login/login.module';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GlobalModule } from './global/global.module';
 import { AlertService } from './global/services/alert.service';
 import { OutletModule } from './outlets/outlets.module';

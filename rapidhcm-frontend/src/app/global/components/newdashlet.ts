@@ -11,7 +11,9 @@ export class NewDashletComponent {
 
     public plusIcon: IconDefinition = faPlusCircle;
 
+    public isModalToggled: boolean = false;
+
     public createDashlet(): void {
-        console.log('add a new dashlet')
+        this.isModalToggled = !this.isModalToggled;
     }
 }
